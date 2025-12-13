@@ -2,6 +2,12 @@ import React from 'react'
 
 import { Route, Routes } from 'react-router-dom'
 
+import Splash from './screens/Splash'
+import Welcome from './screens/Welcome'
+import Purpose from './screens/Purpose'
+import AskName from './screens/AskName'
+import TrueHome from './screens/Home'
+
 import Home from './Pages/Home'
 import CatNames from './Pages/CatNames/CatNames'
 import Profile from './Pages/Profile/Profile'
@@ -12,6 +18,11 @@ import Error404 from './Pages/Error404'
 
 const AppRoutes = () => (
   <Routes>
+    <Route path="/splash" element={<Splash />} />
+    <Route path="/welcome" element={<Welcome />} />
+    <Route path="/purpose" element={<Purpose />} />
+    <Route path="/askname" element={<AskName />} />
+    <Route path="/truehome" element={<TrueHome />} />
     <Route path="/" element={<Home />} />
     <Route path="/profile" element={<Profile />}>
       <Route path="" element={<ProfileOverview />} />

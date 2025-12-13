@@ -38,15 +38,11 @@ const plugins = [
       appName: pkg.appName,
       appDescription: pkg.description,
       developerName: pkg.author,
-      developerURL: null, // prevent retrieving from the nearest package.json
+      developerURL: null,
       background: '#ddd',
       theme_color: '#333',
       icons: {
-        // android: true, // Create Android homescreen icon. `boolean` or `{ offset, background }` or an array of sources
-        // appleIcon: true, // Create Apple touch icons. `boolean` or `{ offset, background }` or an array of sources
-        // appleStartup: true, // Create Apple startup images. `boolean` or `{ offset, background }` or an array of sources
-        favicons: true, // Create regular favicons. `boolean` or `{ offset, background }` or an array of sources
-        // windows: true // Create Windows 8 tile icons. `boolean` or `{ offset, background }` or an array of sources
+        favicons: true
       }
     }
   })
@@ -54,12 +50,22 @@ const plugins = [
 
 export default {
   entry: {
-    app: './src/react/App.jsx',
+    app: './src/react/main.jsx',
   },
   output: {
     filename: 'app.[contenthash].js',
     path: path.resolve(__dirname, 'build'),
-    assetModuleFilename: 'assets/[contenthash].[ext]'
+    assetModuleFilename: 'assets/[contenthash].[ext]',
+    publicPath: '/'
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'build')
+    },
+    historyApiFallback: true,
+    hot: true,
+    open: true,
+    port: 8080
   },
   devtool: (
     process.env.NODE_ENV !== 'production'
