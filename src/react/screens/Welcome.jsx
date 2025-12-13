@@ -1,12 +1,24 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ScreenLayout from '../components/ScreenLayout'
+import { ScreenLayout, Header, Text, Button, Spacer } from '../components'
 
 const Welcome = ({ setStep }) => (
   <ScreenLayout>
-    <h1>Welcome!</h1>
-    <p>We&apos;re here to help you quit smoking step by step.</p>
-    <button type="button" onClick={() => setStep('askName')}>Continue</button>
+    <Header variant="h3" align="center">Welcome</Header>
+    <Spacer size={2} />
+    <Text align="center">
+    We&apos;re here to help you quit smoking step by step.
+    </Text>
+    <Spacer size={3} />
+    <Button
+      sx={{
+        display: 'flex',
+        justifyContent: 'flex-end', // right
+        mt:2,
+      }}
+    onClick={() => setStep('askName')}>
+      Continue
+    </Button>
   </ScreenLayout>
 )
 

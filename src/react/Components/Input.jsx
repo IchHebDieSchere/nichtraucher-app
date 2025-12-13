@@ -50,7 +50,7 @@ Input.defaultProps = {
   type: 'text',
   placeholder: '',
   disabled: false,
-  fullWidth: true,
+  fullWidth: false,
   error: false,
   helperText: ''
 }

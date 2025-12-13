@@ -1,19 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ScreenLayout from '../components/ScreenLayout'
+import { ScreenLayout, Header, Text, Button, Spacer } from '../components'
 
 const Purpose = ({ name, setStep }) => (
   <ScreenLayout>
-    <h1>
-      Hello
-      {name}
-      !
-    </h1>
-    <p>
-      Quitting smoking is easier than you think. We&apos;ll guide you to avoid
-      relapse and track your progress.
-    </p>
-    <button type="button" onClick={() => setStep('home')}>Start</button>
+    <Header>Hello { name } !</Header>
+    <Spacer size={3}/>
+    <Text>Quitting smoking is easier than you think. We&apos;ll guide you to avoid
+      relapse and track your progress.</Text>
+    <Spacer size={2}/>
+    <Button onClick={() => setStep('home')}>Start</Button>
   </ScreenLayout>
 )
 

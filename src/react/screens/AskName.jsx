@@ -1,12 +1,14 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ScreenLayout from '../components/ScreenLayout'
+import { ScreenLayout, Header, Input, Button, Spacer } from '../components'
 
 const AskName = ({ name, setName, setStep }) => (
   <ScreenLayout>
-    <h1>What&apos;s your name?</h1>
-    <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-    <button type="button" onClick={() => setStep('purpose')}>Continue</button>
+    <Header variant="h3" align="Center">What&apos;s your name?</Header>
+    <Spacer size={2} />
+    <Input type="text" value={name} onChange={(e) => setName(e.target.value)} />
+    <Spacer size={3} />
+    <Button onClick={() => setStep('purpose')}>Continue</Button>
   </ScreenLayout>
 )
 
