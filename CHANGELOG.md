@@ -1,5 +1,32 @@
 # Changelog
 
+## [2025-12-13] - Component Library & Design System
+
+### Added
+
+- 10 reusable components: Button, Input, Card, Header, Text, List, ListItem, Spacer, Divider, ScreenLayout
+- ComponentDemo page showcasing all components with examples
+- Barrel export (index.js) for clean component imports
+- Modern design styling with purple theme and improved typography
+
+### Changed
+
+- Updated all onboarding screens (Splash, Welcome, AskName, Purpose) to use new component library
+- Applied consistent styling across all components with proper spacing and rounded corners
+- Enhanced color palette and typography for better visual hierarchy
+
+### Technical
+
+- Created simplified component API wrapping Material-UI for team ease of use
+- Added PropTypes validation to all components
+- Organized component folder structure with barrel exports
+
+### Notes
+
+- Component library enables faster screen development for team members
+- Simplified API makes React more accessible for beginners
+- All components follow consistent design language
+
 ## [2025-12-13] - Onboarding Flow (Work in Progress)
 
 ### Added
