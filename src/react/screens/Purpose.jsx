@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ScreenLayout from '../components/ScreenLayout'
+import ScreenLayout from '../Components/ScreenLayout'
 
 const Purpose = ({ name, setStep }) => (
   <ScreenLayout>
