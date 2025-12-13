@@ -25,7 +25,10 @@ const Input = ({
     helperText={helperText}
     variant="outlined"
     sx={{
-      marginY: 1
+      marginY: 1,
+      '& .MuiOutlinedInput-root': {
+        borderRadius: 2.5
+      }
     }}
   />
 )

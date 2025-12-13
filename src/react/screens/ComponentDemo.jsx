@@ -14,6 +14,8 @@ import {
 
 const ComponentDemo = () => {
   const [inputValue, setInputValue] = useState('')
+  const [emailValue, setEmailValue] = useState('')
+  const [passwordValue, setPasswordValue] = useState('')
 
   return (
     <ScreenLayout>
@@ -49,15 +51,15 @@ const ComponentDemo = () => {
           <Input
             label="Email"
             type="email"
-            value=""
-            onChange={() => {}}
+            value={emailValue}
+            onChange={(e) => setEmailValue(e.target.value)}
             placeholder="email@example.com"
           />
           <Input
             label="Password"
             type="password"
-            value=""
-            onChange={() => {}}
+            value={passwordValue}
+            onChange={(e) => setPasswordValue(e.target.value)}
           />
         </Card>
 

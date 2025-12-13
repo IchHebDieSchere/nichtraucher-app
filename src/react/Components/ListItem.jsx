@@ -7,13 +7,24 @@ const ListItem = ({ primary, secondary, onClick }) => (
     button={!!onClick}
     onClick={onClick}
     sx={{
-      borderRadius: 1,
-      marginY: 0.5
+      borderRadius: 2,
+      marginY: 0.5,
+      paddingY: 1.5,
+      '&:hover': {
+        backgroundColor: 'rgba(103, 80, 164, 0.08)'
+      }
     }}
   >
     <ListItemText 
       primary={primary} 
       secondary={secondary}
+      primaryTypographyProps={{
+        fontWeight: 500,
+        letterSpacing: '0.1px'
+      }}
+      secondaryTypographyProps={{
+        letterSpacing: '0.25px'
+      }}
     />
   </MuiListItem>
 )

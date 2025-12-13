@@ -6,7 +6,7 @@ const Card = ({ children, title, elevation }) => (
   <MuiCard
     elevation={elevation}
     sx={{
-      borderRadius: 2,
+      borderRadius: 3,
       marginY: 2
     }}
   >

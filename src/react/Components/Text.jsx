@@ -8,7 +8,9 @@ const Text = ({ children, variant, align, color }) => (
     align={align}
     color={color}
     sx={{
-      marginY: 0.5
+      marginY: 0.5,
+      letterSpacing: '0.25px',
+      lineHeight: 1.5
     }}
   >
     {children}

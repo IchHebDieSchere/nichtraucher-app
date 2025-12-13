@@ -8,7 +8,9 @@ const Header = ({ children, variant, align }) => (
     align={align}
     sx={{
       marginY: 2,
-      fontWeight: 'bold'
+      fontWeight: 700,
+      letterSpacing: '0px',
+      lineHeight: 1.2
     }}
   >
     {children}

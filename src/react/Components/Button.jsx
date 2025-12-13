@@ -11,9 +11,14 @@ const Button = ({ children, variant, onClick, disabled, fullWidth, color }) => (
     color={color}
     sx={{
       textTransform: 'none',
-      borderRadius: 2,
-      paddingY: 1.5,
-      paddingX: 3
+      borderRadius: 10,      // M3 cornerLarge (fully rounded pills)
+      paddingY: 1.25,        // M3 spacing
+      paddingX: 3,
+      fontWeight: 500,       // M3 medium weight
+      boxShadow: 'none',
+      '&:hover': {
+        boxShadow: 1
+      }
     }}
   >
     {children}
