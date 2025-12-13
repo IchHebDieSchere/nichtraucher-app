@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import ScreenLayout from '../Components/ScreenLayout'
+import ScreenLayout from '../components/ScreenLayout'
 
 const Home = ({ name }) => (
   <ScreenLayout>

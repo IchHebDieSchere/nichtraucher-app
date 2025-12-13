@@ -4,6 +4,7 @@ import Welcome from './screens/Welcome'
 import AskName from './screens/AskName'
 import Purpose from './screens/Purpose'
 import AppLayout from './AppLayout'
+import ComponentDemo from './screens/ComponentDemo'
 
 const App = () => {
   const [step, setStep] = useState('splash')
@@ -25,7 +26,7 @@ const App = () => {
     return <Purpose name={name} setStep={setStep} />
   }
 
-  return <AppLayout />
+  return <ComponentDemo />
 }
 
 export default App

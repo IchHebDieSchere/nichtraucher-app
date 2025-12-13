@@ -7,6 +7,7 @@ import Welcome from './screens/Welcome'
 import Purpose from './screens/Purpose'
 import AskName from './screens/AskName'
 import TrueHome from './screens/Home'
+import ComponentDemo from './screens/ComponentDemo'
 
 import Home from './Pages/Home'
 import CatNames from './Pages/CatNames/CatNames'
@@ -18,6 +19,7 @@ import Error404 from './Pages/Error404'
 
 const AppRoutes = () => (
   <Routes>
+    <Route path = "/demo" element={<ComponentDemo />} />
     <Route path="/splash" element={<Splash />} />
     <Route path="/welcome" element={<Welcome />} />
     <Route path="/purpose" element={<Purpose />} />
