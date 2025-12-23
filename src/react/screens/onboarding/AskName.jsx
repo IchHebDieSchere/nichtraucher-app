@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { ScreenLayout, Header, Input, Button, Spacer } from '../components'
+import { ScreenLayout, Header, Input, Button, Spacer } from '../../components'
 
 const AskName = ({ name, setName, setStep }) => (
   <ScreenLayout>

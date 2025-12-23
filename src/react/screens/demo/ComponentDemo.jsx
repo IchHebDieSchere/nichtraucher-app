@@ -10,7 +10,7 @@ import {
   ListItem,
   Spacer,
   Divider
-} from '../components'
+} from '../../components'
 
 const ComponentDemo = () => {
   const [inputValue, setInputValue] = useState('')
