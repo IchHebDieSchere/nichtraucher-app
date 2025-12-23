@@ -50,7 +50,7 @@ const plugins = [
 
 export default {
   entry: {
-    app: './src/react/main.jsx',
+    app: './src/App.jsx',
   },
   output: {
     filename: 'app.[contenthash].js',

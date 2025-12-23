@@ -9,7 +9,7 @@ import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
-import App from './App'
+import AppRoutes from './AppRoutes'
 
 const theme = createTheme({
   palette: {
@@ -64,7 +64,7 @@ root.render(
   <ThemeProvider theme={theme}>
     <CssBaseline />
     <Router>
-      <App />
+      <AppRoutes />
     </Router>
   </ThemeProvider>
 )

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import AnalogEmergencyButton from '../../../components/widget/AnalogEmergencyButton/AnalogEmergencyButton';
+import AnalogEmergencyButton from '../../../components/widgets/AnalogEmergencyButton/AnalogEmergencyButton';
 import './AndroidHomeScreen.css';
 import AppLogo from '../../../../assets/favicon.svg';
 
@@ -23,7 +23,7 @@ const AppIcon = ({ name, color }) => {
 
 const AndroidHomeScreen = () => {
   const [message, setMessage] = useState('');
-  const [glowMode, setGlowMode] = useState(false); // 🔴 toggle
+  const [glowMode, setGlowMode] = useState(false);
 
   const handleEmergencyClick = () => {
     setMessage('Help request sent!');

@@ -20,3 +20,6 @@ maps-data
 .firebase
 .yarn
 functions/static/**
+
+# Archive folder for old/trash code
+src/archive/
