@@ -1,5 +1,35 @@
 # Changelog
 
+## [2025-12-23] - Project Restructure for Team Collaboration
+
+### Changed
+
+- **Restructured project into personal workspaces** to prevent merge conflicts with 5 developers
+- Simplified entry point: removed `main.jsx`, `App.jsx` now serves as entry point
+- Moved all imports from `src/react/` to new structure
+- Fixed webpack config to point to correct entry file
+
+### Added
+
+- Personal folder structure: `src/[developer-name]/` for each team member
+- `src/shared/` for commonly used components (Button, Card, Input, etc.)
+- `src/archive/` for old/experimental code (gitignored)
+- `index.js` export pattern for clean imports between team members
+- Project structure README with collaboration guidelines
+
+### Removed
+
+- Old `src/react/` folder structure
+- `main.jsx` entry file (logic moved to App.jsx)
+- Sandbox/demo code (moved to archive)
+
+### Notes
+
+- Each developer now has their own workspace to minimize conflicts
+- Teammates can use each other's exports via: `import { Component } from '@/teammate-name'`
+- Shared components accessible via: `import { Button } from '@/shared/components'`
+- Archive folder is gitignored - safe place for old/trash code
+
 ## [2025-12-23] - Android Homescreen Demo & Emergency Widget
 
 ### Added
