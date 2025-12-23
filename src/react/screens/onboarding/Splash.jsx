@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import ScreenLayout from '../components/ScreenLayout'
+import { ScreenLayout } from '../../components'
 
 const Splash = ({ setStep }) => {
   useEffect(() => {

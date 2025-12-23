@@ -1,0 +1,167 @@
+/* Widget container - simulates 2x2 home screen widget */
+.widget-container {
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 16px;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Main button */
+.analog-button {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  transform: perspective(800px) rotateX(45deg);
+  transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* REMOVED - This was causing the base to move */
+/* .analog-button:active,
+.analog-button.pressed {
+  transform: perspective(800px) rotateX(45deg) translateZ(-10px);
+} */
+
+/* Button surface (the red part) */
+.button-surface {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e63946 0%, #c1121f 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 4px 8px rgba(255, 255, 255, 0.35),
+    inset 0 -4px 8px rgba(0, 0, 0, 0.5), 0 8px 16px rgba(0, 0, 0, 0.6);
+  transform: translateZ(16px);
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Update this to use .button-surface.pressed instead */
+.button-surface.pressed {
+  transform: translateZ(6px);
+  box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.25),
+    inset 0 -2px 5px rgba(0, 0, 0, 0.6), 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Exclamation mark */
+.exclamation {
+  font-size: 56px;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.3), inset 0 -1px 0 rgba(0, 0, 0, 0.5);
+  line-height: 1;
+  user-select: none;
+  font-family: system-ui, -apple-system, sans-serif;
+  filter: drop-shadow(0 -1px 2px rgba(0, 0, 0, 0.4));
+}
+
+/* Button depth/shadow base */
+.button-depth {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #8b0000 0%, #5a0000 100%);
+  border-radius: 50%;
+  top: 0;
+  left: 0;
+  transform: translateZ(-12px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.8);
+  /* No transition - base stays fixed */
+}
+
+/* Glow ring - only visible in glow mode */
+.glow-ring {
+  position: absolute;
+  width: 130%;
+  height: 130%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(230, 57, 70, 0.6) 0%,
+    rgba(230, 57, 70, 0) 70%
+  );
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: glow-pulse 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+/* Glow mode active state */
+.analog-button.glow-active .button-surface {
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.3), 0 4px 8px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(230, 57, 70, 0.6), 0 0 40px rgba(230, 57, 70, 0.3);
+}
+
+/* Accessibility */
+.analog-button:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 4px;
+  border-radius: 50%;
+}
+
+/* High-risk indicator (top right corner) */
+.high-risk-indicator {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #ffd60a 0%, #ffc300 100%);
+  border-radius: 50%;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* Optional: click ripple effect */
+.analog-button::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    transparent 60%
+  );
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.4s ease-out;
+  pointer-events: none;
+}
+
+.analog-button.pressed::after {
+  opacity: 1;
+  transform: scale(1.2);
+  transition: all 0s;
+}

@@ -2,12 +2,13 @@ import React from 'react'
 
 import { Route, Routes } from 'react-router-dom'
 
-import Splash from './screens/Splash'
-import Welcome from './screens/Welcome'
-import Purpose from './screens/Purpose'
-import AskName from './screens/AskName'
-import TrueHome from './screens/Home'
-import ComponentDemo from './screens/ComponentDemo'
+import Splash from './screens/onboarding/Splash'
+import Welcome from './screens/onboarding/Welcome'
+import Purpose from './screens/onboarding/Purpose'
+import AskName from './screens/onboarding/AskName'
+import TrueHome from './screens/home/Home'
+import ComponentDemo from './screens/demo/ComponentDemo'
+
 
 import Home from './Pages/Home'
 import CatNames from './Pages/CatNames/CatNames'

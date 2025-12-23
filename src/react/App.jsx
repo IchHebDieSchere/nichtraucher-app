@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
-import Splash from './screens/Splash'
-import Welcome from './screens/Welcome'
-import AskName from './screens/AskName'
-import Purpose from './screens/Purpose'
+import Splash from './screens/onboarding/Splash'
+import Welcome from './screens/onboarding/Welcome'
+import AskName from './screens/onboarding/AskName'
+import Purpose from './screens/onboarding/Purpose'
 import AppLayout from './AppLayout'
-import ComponentDemo from './screens/ComponentDemo'
+import ComponentDemo from './screens/demo/ComponentDemo'
+import AndroidHomeScreen from './screens/demo/AndroidHomeScreen/AndroidHomeScreen'
 
 const App = () => {
+  /*
   const [step, setStep] = useState('splash')
   const [name, setName] = useState('')
 
@@ -25,8 +27,8 @@ const App = () => {
   if (step === 'purpose') {
     return <Purpose name={name} setStep={setStep} />
   }
-
-  return <ComponentDemo />
+*/
+  return <AndroidHomeScreen />
 }
 
 export default App
