@@ -1,5 +1,20 @@
 # Changelog
 
+## [2025-12-23] - Android Homescreen Demo & Emergency Widget
+
+### Added
+
+- AndroidHomeScreen demo
+- Animated emergency button widget with two modes:
+  - Normal mode: Standard red emergency button
+  - Glow mode: Pulsing glow effect for emphasis
+- Mode toggle feature to switch between normal and glow states
+
+### Notes
+
+- Serves as visual mockup for emergency feature presentation
+- Demonstrates widget integration in realistic phone environment
+
 ## [2025-12-13] - Component Library & Design System
 
 ### Added
