@@ -1,16 +1,20 @@
+// Import
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { CssBaseline } from '@mui/material'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
+// Import fonts
 import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
 
+// Import AppRoutes.jsx
 import AppRoutes from './AppRoutes'
 
+// createTheme?
 const theme = createTheme({
   palette: {
     primary: {
@@ -57,9 +61,13 @@ const theme = createTheme({
   }
 })
 
+// create Container
 const container = document.getElementById('app')
+
+// create Root
 const root = createRoot(container)
 
+// handler
 root.render(
   <ThemeProvider theme={theme}>
     <CssBaseline />

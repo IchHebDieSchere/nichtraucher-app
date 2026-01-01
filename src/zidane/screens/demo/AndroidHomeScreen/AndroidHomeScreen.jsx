@@ -1,46 +1,62 @@
+// Import React Hook
 import React, { useState } from 'react';
+
+// Import AnalogEmergencyButton component
 import AnalogEmergencyButton from '../../../components/widgets/AnalogEmergencyButton/AnalogEmergencyButton';
+
+// Import the coresponding css file
 import './AndroidHomeScreen.css';
+
+// Import the app logo
 import AppLogo from '../../../../assets/favicon.svg';
 
-const AppIcon = ({ name, color }) => {
-  return (
+// Create AppIcon component for mock
+const AppIcon = ({ name, color }) => (
     <div className="app-icon">
       <div
         className="icon-box"
         style={{
+          // set the style for the icon box
           backgroundColor: color,
           borderRadius: '28px',
           boxShadow: '0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)',
         }}
       >
+        {/* Put a char at the middle of the icon*/}
         {name.charAt(0)}
       </div>
+        {/* Put name underneath */}
       <div className="app-name">{name}</div>
     </div>
   );
-};
 
+// the actual component handler
 const AndroidHomeScreen = () => {
   const [message, setMessage] = useState('');
   const [glowMode, setGlowMode] = useState(false);
 
+  // onClick handler
   const handleEmergencyClick = () => {
     setMessage('Help request sent!');
     setTimeout(() => setMessage(''), 2000);
   };
 
+  // formating
   const borderRadius = 6;
   const spacing = 8;
 
   return (
+    // Home-Screen-Wrapper
     <div className="home-screen-wrapper">
+      {/* Home-Screen-Container */}
       <div className="home-screen-container">
+        {/* Put header  at the top*/}
         <div className="header">
           <img src={AppLogo} alt="App Logo" className="app-logo" />
           <h5 className="app-title">My Mobile Health App</h5>
         </div>
 
+        {/* Use Phone Frame, put everything inside */}
         <div
           className="phone-frame"
           style={{
@@ -48,10 +64,12 @@ const AndroidHomeScreen = () => {
             borderRadius: `${spacing * borderRadius}px`,
           }}
         >
+          {/* User Phone Screen */}
           <div
             className="phone-screen"
             style={{ borderRadius: `${spacing * borderRadius}px` }}
           >
+            {/* Top Bar */}
             <div className="status-bar">
               <span>9:41</span>
               <div className="status-icons">
@@ -60,7 +78,8 @@ const AndroidHomeScreen = () => {
                 <span>🔋</span>
               </div>
             </div>
-
+            {message ? <div className="notification">{message}</div> : null}
+            {/* mid section */}
             <div className="content-area">
               {/* App grid */}
               <div className="app-grid">
@@ -88,7 +107,6 @@ const AndroidHomeScreen = () => {
                     checked={glowMode}
                     onChange={() => setGlowMode(prev => !prev)}
                   />
-                  <span className="slider" />
                 </label>
 
                 <div className="risk-demo-text">
@@ -102,8 +120,6 @@ const AndroidHomeScreen = () => {
                   </p>
                 </div>
               </div>
-
-              {message && <div className="notification">{message}</div>}
             </div>
 
             <div className="bottom-bar">
