@@ -4,6 +4,7 @@ import { Route, Routes } from 'react-router-dom'
 
 import Home from './Pages/Home'
 import CatNames from './Pages/CatNames/CatNames'
+import Facts from './Pages/Facts/Facts'
 import Profile from './Pages/Profile/Profile'
 import ProfileOverview from './Pages/Profile/ProfileOverview'
 import ProfileSettings from './Pages/Profile/ProfileSettings'
@@ -18,6 +19,7 @@ const AppRoutes = () => (
       <Route path="settings" element={<ProfileSettings />} />
     </Route>
     <Route path="/catnames" element={<CatNames />} />
+    <Route path="/Facts" element={<Facts />} />
     <Route path="*" element={<Error404 />} />
   </Routes>
 )
