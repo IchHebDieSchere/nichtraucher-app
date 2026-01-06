@@ -88,6 +88,7 @@ const BoxBreathing = () => {
     >
       <div className="breathing-container">
         <h2>Box Breathing</h2>
+        <h4>Focus on your breathing</h4>
         {/* Instruction text */}
         <h2>{label}</h2>
 
@@ -98,6 +99,8 @@ const BoxBreathing = () => {
               {[0, 1, 2, 3].map((i) => (
                 <span
                   key={i}
+                  /* Checks which side s is currently active and depending on the current second,
+                  * activates the corresponding arrow. Shout-out to ChatGPT for helping with this */
                   className={`arrow ${
                     s === side && isArrowActive(s, i, step) ? 'active' : ''
                   }`}
