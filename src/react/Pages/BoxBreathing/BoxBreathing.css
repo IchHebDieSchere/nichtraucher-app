@@ -1,0 +1,65 @@
+.breathing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.box {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    border: 4px solid #1976d2;
+    border-radius: 12px;
+}
+
+/* Edges */
+.edge {
+    position: absolute;
+    display: flex;
+    gap: 6px;
+}
+
+/* Top */
+.edge.top {
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Right */
+.edge.right {
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+}
+
+/* Bottom */
+.edge.bottom {
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Left */
+.edge.left {
+    left: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+}
+
+/* Arrows */
+.arrow {
+    font-size: 20px;
+    color: #bbb;
+    opacity: 0.35;
+    transition: all 0.3s ease;
+}
+
+.arrow.active {
+    color: #1976d2;
+    opacity: 1;
+    transform: scale(1.25);
+}
