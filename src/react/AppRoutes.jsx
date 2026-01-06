@@ -9,6 +9,7 @@ import ProfileOverview from './Pages/Profile/ProfileOverview'
 import ProfileSettings from './Pages/Profile/ProfileSettings'
 
 import Error404 from './Pages/Error404'
+import Minigame from './Pages/Minigame/Minigame'
 
 const AppRoutes = () => (
   <Routes>
@@ -18,6 +19,7 @@ const AppRoutes = () => (
       <Route path="settings" element={<ProfileSettings />} />
     </Route>
     <Route path="/catnames" element={<CatNames />} />
+    <Route path="/minigame" element={<Minigame />} />
     <Route path="*" element={<Error404 />} />
   </Routes>
 )
