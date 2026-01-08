@@ -9,10 +9,12 @@ import ProfileSettings from './Pages/Profile/ProfileSettings'
 
 import Error404 from './Pages/Error404'
 import SplashScreen from './Pages/SplashScreen'
+import WelcomeScreen from './Pages/WelcomeScreen'
 
 const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<SplashScreen />} />
+    <Route path="/welcome" element={<WelcomeScreen />} />
     <Route path="/profile" element={<Profile />}>
       <Route path="" element={<ProfileOverview />} />
       <Route path="settings" element={<ProfileSettings />} />
