@@ -32,7 +32,7 @@ const Statistics = () => {
       >
         Lorem ipsum statistik
       </Box>
-      {!isWidgetAdded && ( //gpt
+      {!isWidgetAdded && (
         <Button
           variant="contained"
           sx={{
