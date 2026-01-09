@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router'
+import { useNavigate } from 'react-router-dom'
 import { Stack } from '@mui/material'
 
 const WelcomeScreen = () => {
@@ -13,7 +13,8 @@ const WelcomeScreen = () => {
 
     if (cleanedName !== '') {
       localStorage.setItem('userName', cleanedName)
-    } else navigate('/method')
+    }
+    navigate('/method')
   }
 
   return (
