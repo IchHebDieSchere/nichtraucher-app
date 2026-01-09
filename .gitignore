@@ -20,6 +20,9 @@ maps-data
 .firebase
 .yarn
 functions/static/**
+<<<<<<< Updated upstream
 
 # Archive folder for old/trash code
+=======
+>>>>>>> Stashed changes
 src/archive/
