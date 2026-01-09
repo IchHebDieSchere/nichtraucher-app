@@ -2411,6 +2411,51 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@redis/bloom@npm:5.10.0":
+  version: 5.10.0
+  resolution: "@redis/bloom@npm:5.10.0"
+  peerDependencies:
+    "@redis/client": ^5.10.0
+  checksum: 10c0/ef66eda591b1df2d6187fad95c07f3a36a2e0d61acdc983a1a4e87c72a45ba7aa5850316bf6f87980b6dbfc269fe8dcd8ba5ee37c91d03d69cec120acaa45cc0
+  languageName: node
+  linkType: hard
+
+"@redis/client@npm:5.10.0":
+  version: 5.10.0
+  resolution: "@redis/client@npm:5.10.0"
+  dependencies:
+    cluster-key-slot: "npm:1.1.2"
+  checksum: 10c0/f4409d64968d59a803eb40ccc6ab0e0a21aa5dd68837b079e7dadf31648efc62615298b9b71e85f1122596ae08c135f24f20bb0b35313c9066c1c63856be5cc7
+  languageName: node
+  linkType: hard
+
+"@redis/json@npm:5.10.0":
+  version: 5.10.0
+  resolution: "@redis/json@npm:5.10.0"
+  peerDependencies:
+    "@redis/client": ^5.10.0
+  checksum: 10c0/9afa26c365a72d0542db5916e570b00c845b4e860b0d21c14c9921220a450e28ac965eabfb1ad1fca1f4910850dc9fba630c8f0751d69a2c2eab426047b39a9e
+  languageName: node
+  linkType: hard
+
+"@redis/search@npm:5.10.0":
+  version: 5.10.0
+  resolution: "@redis/search@npm:5.10.0"
+  peerDependencies:
+    "@redis/client": ^5.10.0
+  checksum: 10c0/5123eba639e4d815e2da9c695de3fb9fdfa13211466d2672f602c3cf7b1dbe5493ded842233bfa154828abeb42434b0979b8a82e1f29dd577ed254671991577b
+  languageName: node
+  linkType: hard
+
+"@redis/time-series@npm:5.10.0":
+  version: 5.10.0
+  resolution: "@redis/time-series@npm:5.10.0"
+  peerDependencies:
+    "@redis/client": ^5.10.0
+  checksum: 10c0/2128a4e47418938ae515761475cda3e4ff67f85dfbdcd1f8dace72c5ea71d0f3f7359b1d74881e59ac4499e9d1956d38b0974d65dd677669c41731b41d9c737e
+  languageName: node
+  linkType: hard
+
 "@remix-run/router@npm:1.21.0":
   version: 1.21.0
   resolution: "@remix-run/router@npm:1.21.0"
@@ -4310,6 +4355,13 @@ __metadata:
   version: 2.1.1
   resolution: "clsx@npm:2.1.1"
   checksum: 10c0/c4c8eb865f8c82baab07e71bfa8897c73454881c4f99d6bc81585aecd7c441746c1399d08363dc096c550cceaf97bd4ce1e8854e1771e9998d9f94c4fe075839
+  languageName: node
+  linkType: hard
+
+"cluster-key-slot@npm:1.1.2":
+  version: 1.1.2
+  resolution: "cluster-key-slot@npm:1.1.2"
+  checksum: 10c0/d7d39ca28a8786e9e801eeb8c770e3c3236a566625d7299a47bb71113fb2298ce1039596acb82590e598c52dbc9b1f088c8f587803e697cb58e1867a95ff94d3
   languageName: node
   linkType: hard
 
@@ -9327,6 +9379,7 @@ __metadata:
     react-router: "npm:^6.26.1"
     react-router-dom: "npm:^6.26.1"
     react-transition-group: "npm:^4.4.5"
+    src: "npm:^1.1.2"
     stream-browserify: "npm:^3.0.0"
     wait-cli: "npm:^1.0.0"
     watch: "npm:^1.0.1"
@@ -11006,6 +11059,28 @@ __metadata:
   languageName: node
   linkType: hard
 
+"redis-url@npm:~0.2.0":
+  version: 0.2.0
+  resolution: "redis-url@npm:0.2.0"
+  dependencies:
+    redis: "npm:>= 0.0.1"
+  checksum: 10c0/2c2d20df29871c48f379b2d8e05afc145257b71ab5e9da164e6a77ae338c0a7709a9cf932a0d5e19e28af896d26e6e897e6565c1e6afc305c15d0459f836e24c
+  languageName: node
+  linkType: hard
+
+"redis@npm:>= 0.0.1":
+  version: 5.10.0
+  resolution: "redis@npm:5.10.0"
+  dependencies:
+    "@redis/bloom": "npm:5.10.0"
+    "@redis/client": "npm:5.10.0"
+    "@redis/json": "npm:5.10.0"
+    "@redis/search": "npm:5.10.0"
+    "@redis/time-series": "npm:5.10.0"
+  checksum: 10c0/7103db47deb7ee3915e3c6015fc5dbe4cb956e7fa94365f981416e015d1e6e64ec3513235ea0e4150d733481ea7c92439e5489f0cfff0781598912e5fd045f90
+  languageName: node
+  linkType: hard
+
 "reduce-flatten@npm:^2.0.0":
   version: 2.0.0
   resolution: "reduce-flatten@npm:2.0.0"
@@ -12002,6 +12077,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"src@npm:^1.1.2":
+  version: 1.1.2
+  resolution: "src@npm:1.1.2"
+  dependencies:
+    redis-url: "npm:~0.2.0"
+    underscore: "npm:~1.6.0"
+    uuid: "npm:~1.4.1"
+  checksum: 10c0/ed81a2fdca6318cc1db952f025f0041bb7ff0d1c527ebdff10ba0709f7409200d95802be677853268ec5e575414b66770b208adccda4f7d739fec676e70cbe2b
+  languageName: node
+  linkType: hard
+
 "ssri@npm:^10.0.0":
   version: 10.0.6
   resolution: "ssri@npm:10.0.6"
@@ -12781,6 +12867,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"underscore@npm:~1.6.0":
+  version: 1.6.0
+  resolution: "underscore@npm:1.6.0"
+  checksum: 10c0/23db03890dc042984b5a6082f2784969aa1af0110b11486347b84e3e1c5ebc3a83531cfc031097900ccfc88cf2ded43970220d94e388e5b10e56519813d7d029
+  languageName: node
+  linkType: hard
+
 "undici-types@npm:~6.20.0":
   version: 6.20.0
   resolution: "undici-types@npm:6.20.0"
@@ -12956,6 +13049,13 @@ __metadata:
   bin:
     uuid: dist/bin/uuid
   checksum: 10c0/bcbb807a917d374a49f475fae2e87fdca7da5e5530820ef53f65ba1d12131bd81a92ecf259cc7ce317cbe0f289e7d79fdfebcef9bfa3087c8c8a2fa304c9be54
+  languageName: node
+  linkType: hard
+
+"uuid@npm:~1.4.1":
+  version: 1.4.2
+  resolution: "uuid@npm:1.4.2"
+  checksum: 10c0/4d031fba5c52f0d1d7b1cb1a0a62f6b5b484e1c97c5250d94de0af939363fc39cf28f5143e8cd28a4cb804e7306727e40d627b1de7665bbe3c0d29f5b4f4dd4a
   languageName: node
   linkType: hard
 

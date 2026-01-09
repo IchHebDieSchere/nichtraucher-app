@@ -1,57 +1,61 @@
 import React from 'react'
 
-import { Stack, ButtonGroup, Button } from '@mui/material'
+import { Stack, ButtonGroup } from '@mui/material'
 import { Box } from '@mui/system'
+import Button from '../../Components/Button'
 
-const Statistics = () => (
-  <Stack
-    spacing={3}
-    flex="1 1 auto"
-    justifyContent="center"
-    alignItems="center"
-  >
-    <ButtonGroup
-      variant="outlined"
-      aria-label="Basic button group"
-      sx={{
-        position: 'fixed',
-        top: 140,
-        zIndex: 100
-      }}
+const Statistics = () => {
+  const isWidgetAdded = true
+  return (
+    <Stack
+      alignItems="center"
+      justifyContent="center"
+      spacing={1}
     >
-      <Button variant="contained">Statistik</Button>
-      <Button>Methoden</Button>
-    </ButtonGroup>
-    <Box
-      sx={{
-        width: 360,
-        height: 360,
-        borderRadius: 3,
-        bgcolor: 'primary.main'
-      }}
-    />
-    <Button
-      variant="contained"
-      sx={{
-        position: 'fixed',
-        bottom: 120,
-        zIndex: 100
-      }}
-    >
-      Widget
-    </Button>
-    <Button
-      variant="contained"
-      color="success"
-      sx={{
-        position: 'fixed',
-        bottom: 120,
-        zIndex: 100
-      }}
-    >
-      Notfall
-    </Button>
-  </Stack>
-)
+      <ButtonGroup
+        variant="outlined"
+        sx={{
+          zIndex: 100
+        }}
+      >
+        <Button variant="outlined">Statistik</Button>
+        <Button variant="outlined">Methoden</Button>
+      </ButtonGroup>
+      <Box
+        sx={{
+          width: 360,
+          height: 360,
+          borderRadius: 3,
+          border: '1px solid',
+          p: 1
+        }}
+      >
+        Lorem ipsum statistik
+      </Box>
+      {!isWidgetAdded && ( //gpt
+        <Button
+          variant="contained"
+          sx={{
+            bgcolor: '#989595',
+            zIndex: 100
+          }}
+        >
+          Widget
+        </Button>
+      )}
+
+      <Button
+        variant="contained"
+        sx={{
+          bgcolor: '#fc0303',
+          color: 'fff',
+          zIndex: 99
+        }}
+      >
+        Notfall
+      </Button>
+    </Stack>
+  )
+}
 
 export default Statistics
