@@ -12,6 +12,7 @@ import FeedbackScreen from './Pages/FeedbackScreen'
 import Error404 from './Pages/Error404'
 import SplashScreen from './Pages/SplashScreen'
 import WelcomeScreen from './Pages/WelcomeScreen'
+import MethodScreen from './Pages/MethodScreen'
 
 const AppRoutes = () => (
   <Routes>
@@ -19,6 +20,7 @@ const AppRoutes = () => (
     <Route path="/" element={<SplashScreen />} />
     <Route path="/feedback" element={<FeedbackScreen />} />
     <Route path="/welcome" element={<WelcomeScreen />} />
+    <Route path="/method" element={<MethodScreen />} />
     <Route path="/profile" element={<Profile />}>
       <Route path="" element={<ProfileOverview />} />
       <Route path="settings" element={<ProfileSettings />} />
