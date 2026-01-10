@@ -7,12 +7,14 @@ import CatNames from './Pages/CatNames/CatNames'
 import Profile from './Pages/Profile/Profile'
 import ProfileOverview from './Pages/Profile/ProfileOverview'
 import ProfileSettings from './Pages/Profile/ProfileSettings'
+import SuggestionScreen from './Pages/SuggestionScreen'
 
 import Error404 from './Pages/Error404'
 
 const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Home />} />
+    <Route path="/suggestion" element={<SuggestionScreen />} />
     <Route path="/profile" element={<Profile />}>
       <Route path="" element={<ProfileOverview />} />
       <Route path="settings" element={<ProfileSettings />} />
