@@ -10,6 +10,8 @@ import ProfileSettings from './Pages/Profile/ProfileSettings'
 
 import Error404 from './Pages/Error404'
 
+import Homescreen from './Pages/Homescreen'
+
 const AppRoutes = () => (
   <Routes>
     <Route path="/" element={<Home />} />
@@ -19,6 +21,7 @@ const AppRoutes = () => (
     </Route>
     <Route path="/catnames" element={<CatNames />} />
     <Route path="*" element={<Error404 />} />
+    <Route path="/homescreen" element={<Homescreen />} />
   </Routes>
 )
 

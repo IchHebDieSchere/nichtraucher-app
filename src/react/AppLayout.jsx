@@ -87,7 +87,7 @@ const AppLayout = () => {
           <Stack
             flex="1 1 auto"
             direction="column"
-            justifyContent="center"
+            justifyContent={location.pathname.startsWith('/homescreen') ? 'space-between' : 'center' }
             alignItems="center"
             sx={{
               overflow: 'hidden',
@@ -96,6 +96,7 @@ const AppLayout = () => {
             }}
           >
             <AppRoutes />
+            {location.pathname.startsWith('/homescreen') ? null : (
             <BottomNavigation
               showLabels
               value={navigationIndex}
@@ -117,6 +118,7 @@ const AppLayout = () => {
                 onClick={() => navigate('/profile')}
               />
             </BottomNavigation>
+            )}
           </Stack>
         </Paper>
       </Container>
