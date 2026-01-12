@@ -6,6 +6,7 @@ import CatNames from './Pages/CatNames/CatNames'
 import Profile from './Pages/Profile/Profile'
 import ProfileOverview from './Pages/Profile/ProfileOverview'
 import ProfileSettings from './Pages/Profile/ProfileSettings'
+import FeedbackScreen from './Pages/FeedbackScreen'
 
 import Error404 from './Pages/Error404'
 import SplashScreen from './Pages/SplashScreen'
