@@ -6,6 +6,7 @@ import CatNames from './Pages/CatNames/CatNames'
 import Profile from './Pages/Profile/Profile'
 import ProfileOverview from './Pages/Profile/ProfileOverview'
 import ProfileSettings from './Pages/Profile/ProfileSettings'
+import SuggestionScreen from './Pages/SuggestionScreen'
 import FeedbackScreen from './Pages/FeedbackScreen'
 
 import Error404 from './Pages/Error404'
@@ -14,7 +15,9 @@ import WelcomeScreen from './Pages/WelcomeScreen'
 
 const AppRoutes = () => (
   <Routes>
+    <Route path="/suggestion" element={<SuggestionScreen />} />
     <Route path="/" element={<SplashScreen />} />
+    <Route path="/feedback" element={<FeedbackScreen />} />
     <Route path="/welcome" element={<WelcomeScreen />} />
     <Route path="/profile" element={<Profile />}>
       <Route path="" element={<ProfileOverview />} />
