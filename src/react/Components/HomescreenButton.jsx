@@ -2,9 +2,13 @@ import React from "react";
 
 import { Stack, Avatar, Typography } from "@mui/material";
 
+const color = ["red", "orange", "yellow", "green", "blue", "violet", "purple"];
+
 const HomescreenButton = ({ label = "!missing" }) => (
   <Stack justifyContent="center" alignItems="center">
-    <Avatar>{label[0]}</Avatar>
+    <Avatar sx={{ bgcolor: color[Math.floor(Math.random() * color.length)] }}>
+      {label[0]}
+    </Avatar>
     <Typography>{label}</Typography>
   </Stack>
 );
