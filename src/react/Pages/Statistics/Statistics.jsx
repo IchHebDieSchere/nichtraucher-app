@@ -1,26 +1,27 @@
 import React from 'react'
 
-import { Stack, ButtonGroup } from '@mui/material'
-import { Box } from '@mui/system'
+import { Stack, Box, ToggleButtonGroup, ToggleButton } from '@mui/material'
+
 import Button from '../../Components/Button'
 
 const Statistics = () => {
-  const isWidgetAdded = true
+  const isWidgetAdded = false
+
   return (
     <Stack
       alignItems="center"
       justifyContent="center"
       spacing={1}
     >
-      <ButtonGroup
-        variant="outlined"
-        sx={{
-          zIndex: 100
-        }}
+      <ToggleButtonGroup
+        color="primary"
+        exclusive
+        //onChange={handleChange}
+        aria-label="Platform"
       >
-        <Button variant="outlined">Statistik</Button>
-        <Button variant="outlined">Methoden</Button>
-      </ButtonGroup>
+        <ToggleButton value="statistik">Statistik</ToggleButton>
+        <ToggleButton value="methoden">Methoden</ToggleButton>
+      </ToggleButtonGroup>
       <Box
         sx={{
           width: 360,
