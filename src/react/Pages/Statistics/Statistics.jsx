@@ -20,7 +20,9 @@ const Statistics = () => {
           p: 1
         }}
       >
-        Lorem ipsum statistik
+        <div><b>Rauchverlangen unterdrückt:</b></div>
+        <div><b>Rauchfreie Tage:</b></div>
+        <div><b>Abgeschlossene Missionen:</b></div>
       </Box>
       {!isWidgetAdded && (
         <Button
