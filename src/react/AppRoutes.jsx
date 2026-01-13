@@ -12,6 +12,7 @@ import FeedbackScreen from './Pages/FeedbackScreen'
 import Error404 from './Pages/Error404'
 import SplashScreen from './Pages/SplashScreen'
 import WelcomeScreen from './Pages/WelcomeScreen'
+import MainMenu from './Pages/MainMenu/MainMenu'
 
 const AppRoutes = () => (
   <Routes>
@@ -24,6 +25,7 @@ const AppRoutes = () => (
       <Route path="settings" element={<ProfileSettings />} />
     </Route>
     <Route path="/catnames" element={<CatNames />} />
+    <Route path="/mainmenu" element={<MainMenu />} />
     <Route path="*" element={<Error404 />} />
   </Routes>
 )

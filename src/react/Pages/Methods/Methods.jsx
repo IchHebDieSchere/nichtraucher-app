@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Stack, Box, ToggleButtonGroup, ToggleButton, Button } from '@mui/material'
+import { Stack, Box, Button } from '@mui/material'
 
 const Methods = () => {
   const isWidgetAdded = false
@@ -11,15 +11,6 @@ const Methods = () => {
       justifyContent="center"
       spacing={1}
     >
-      <ToggleButtonGroup
-        color="primary"
-        exclusive
-        //onChange={handleChange}
-        aria-label="Platform"
-      >
-        <ToggleButton value="statistik">Statistik</ToggleButton>
-        <ToggleButton value="methoden">Methoden</ToggleButton>
-      </ToggleButtonGroup>
       <Box
         sx={{
           width: 360,
