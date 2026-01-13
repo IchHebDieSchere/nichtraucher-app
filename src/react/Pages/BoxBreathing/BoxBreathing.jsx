@@ -1,84 +1,19 @@
-import React, { useEffect, useState } from 'react'
-import { Stack, Button } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import './BoxBreathing.css'
+import { Stack, Box } from '@mui/material'
+import React from 'react'
+import { ArrowBack, ArrowDownward, ArrowForward, ArrowUpward } from '@mui/icons-material'
 
-/**
- * Box Breathing information found via https://nicetomeetme.at/box-breathing/ & https://www.youtube.com/watch?v=tEmt1Znux58
- */
+const ArrowStep = [0, 1, 2, 3]
+const ArrowRotation = ['0deg', '90deg', '180deg', '270deg']
 
-/**
- * Definition of the 4 box-breathing phases.
- * Each phase lasts 4 seconds and maps to one side of the box.
- */
-const PHASES = [
-  { label: 'Breathe in', side: 'top' },
-  { label: 'Hold', side: 'right' },
-  { label: 'Breathe out', side: 'bottom' },
-  { label: 'Hold', side: 'left' }
-]
-
-/**
- * Determines whether a specific arrow should be lit up.
- *
- * - For top & right sides, arrows light up in normal order (0 → 3)
- * - For bottom & left sides, arrows light up in reverse order (3 → 0)
- *
- * @param {string} side - The side of the box (top, right, bottom, left)
- * @param {number} index - Index of the arrow (0–3)
- * @param {number} step - Current second within the phase (0–3)
- */
-const isArrowActive = (side, index, step) => {
-  if (side === 'bottom' || side === 'left') {
-    return index >= 3 - step
-  }
-  return index <= step
-}
-
-const BoxBreathing = () => {
-  /**
-   * Index of the current breathing phase (0–3)
-   * 0: Breathe in
-   * 1: Hold
-   * 2: Breathe out
-   * 3: Hold
-   */
-  const [phaseIndex, setPhaseIndex] = useState(0)
-
-  /**
-   * Step within the current phase (0–3)
-   * Represents the 4 seconds visually via arrows
-   */
-  const [step, setStep] = useState(0)
-
-  /**
-   * Main timing loop.
-   * Runs once per second.
-   *
-   * - Advances the arrow step every second
-   * - After 4 steps, moves to the next phase
-   * - Loops indefinitely
-   */
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setStep((prevStep) => {
-        if (prevStep === 3) {
-          // Move to next breathing phase after 4 seconds
-          setPhaseIndex((prevPhase) => (prevPhase + 1) % PHASES.length)
-          return 0
-        }
-        return prevStep + 1
-      })
-    }, 1000)
-
-    // Cleanup interval when component unmounts
-    return () => clearInterval(interval)
-  }, [])
-
-  // Extract the active side and instruction label
-  const { side, label } = PHASES[phaseIndex]
-  const navigate = useNavigate()
-  return (
+const BoxBreathing = () => (
+  <Stack
+    sx={{
+      flex: '1 1 auto',
+      justifyContent: 'center',
+      alignItems: 'center'
+    }}
+  >
+    <h2>Box Breathing Exercise</h2>
     <Stack
       sx={{
         flex: '1 1 auto',
@@ -86,45 +21,79 @@ const BoxBreathing = () => {
         alignItems: 'center'
       }}
     >
-      <div className="breathing-container">
-        <h2>Box Breathing</h2>
-        <h4>Focus on your breathing</h4>
-        {/* Instruction text */}
-        <h2>{label}</h2>
 
-        {/* Breathing box */}
-        <div className="box">
-          {['top', 'right', 'bottom', 'left'].map((s) => (
-            <div key={s} className={`edge ${s}`}>
-              {[0, 1, 2, 3].map((i) => (
-                <span
-                  key={i}
-                  /* Checks which side s is currently active and depending on the current second,
-                  * activates the corresponding arrow. Shout-out to ChatGPT for helping with this */
-                  className={`arrow ${
-                    s === side && isArrowActive(s, i, step) ? 'active' : ''
-                  }`}
-                >
-                  {/* Arrow direction depends on box side */}
-                  {s === 'top' && '→'}
-                  {s === 'right' && '↓'}
-                  {s === 'bottom' && '←'}
-                  {s === 'left' && '↑'}
-                </span>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>
-      <br />
-      <Button
-        variant="contained"
-        onClick={() => navigate('/Feedback')}
+      <Box
+        sx={{
+          width: 300,
+          height: 300,
+          border: '4px solid',
+          borderColor: 'primary.main',
+          borderRadius: 2,
+          position: 'relative',
+          mb: 4
+        }}
       >
-        Continue
-      </Button>
+        {/* Top Arrows */}
+        <Stack
+          direction="row"
+          sx={{
+            position: 'absolute',
+            top: -40,
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+        >
+          {ArrowStep.map((step) => (
+            <ArrowForward key={`top-${step}`} rotation={ArrowRotation[0]} />
+          ))}
+        </Stack>
+        {/* Right Side Arrows */}
+        <Stack
+          direction="column"
+          sx={{
+            position: 'absolute',
+            right: -40,
+            top: '50%',
+            transform: 'translateY(-50%)'
+          }}
+        >
+          {ArrowStep.map((step) => (
+            <ArrowDownward key={`right-${step}`} rotation={ArrowRotation[1]} />
+          ))}
+        </Stack>
+        {/* Bottom Arrows */}
+        <Stack
+          direction="row"
+          sx={{
+            position: 'absolute',
+            bottom: -40,
+            left: '50%',
+            transform: 'translateX(-50%)'
+          }}
+        >
+          {ArrowStep.map((step) => (
+            <ArrowBack key={`bottom-${step}`} rotation={ArrowRotation[2]} />
+          ))}
+        </Stack>
+        {/* Left Side Arrows */}
+        <Stack
+          direction="column"
+          sx={{
+            position: 'absolute',
+            left: -40,
+            top: '50%',
+            transform: 'translateY(-50%)'
+          }}
+        >
+          {ArrowStep.map((step) => (
+            <ArrowUpward key={`left-${step}`} rotation={ArrowRotation[3]} />
+          ))}
+        </Stack>
+
+      </Box>
     </Stack>
-  )
-}
+
+  </Stack>
+)
 
 export default BoxBreathing
