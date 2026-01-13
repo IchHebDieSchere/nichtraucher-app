@@ -1,8 +1,6 @@
 import React from 'react'
 
-import { Stack, Box, ToggleButtonGroup, ToggleButton } from '@mui/material'
-
-import Button from '../../Components/Button'
+import { Stack, Box, Button } from '@mui/material'
 
 const Statistics = () => {
   const isWidgetAdded = false
@@ -13,15 +11,6 @@ const Statistics = () => {
       justifyContent="center"
       spacing={1}
     >
-      <ToggleButtonGroup
-        color="primary"
-        exclusive
-        //onChange={handleChange}
-        aria-label="Platform"
-      >
-        <ToggleButton value="statistik">Statistik</ToggleButton>
-        <ToggleButton value="methoden">Methoden</ToggleButton>
-      </ToggleButtonGroup>
       <Box
         sx={{
           width: 360,
@@ -31,7 +20,9 @@ const Statistics = () => {
           p: 1
         }}
       >
-        Lorem ipsum statistik
+        <div><b>Rauchverlangen unterdrückt:</b></div>
+        <div><b>Rauchfreie Tage:</b></div>
+        <div><b>Abgeschlossene Missionen:</b></div>
       </Box>
       {!isWidgetAdded && (
         <Button
