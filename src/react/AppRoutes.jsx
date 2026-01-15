@@ -5,6 +5,7 @@ import { Route, Routes } from 'react-router-dom'
 import CatNames from './Pages/CatNames/CatNames'
 import Profile from './Pages/Profile/Profile'
 import ProfileOverview from './Pages/Profile/ProfileOverview'
+import BoxBreathing from './Pages/BoxBreathing/BoxBreathing'
 import ProfileSettings from './Pages/Profile/ProfileSettings'
 import SuggestionScreen from './Pages/SuggestionScreen'
 import FeedbackScreen from './Pages/FeedbackScreen'
@@ -26,6 +27,7 @@ const AppRoutes = () => (
       <Route path="settings" element={<ProfileSettings />} />
     </Route>
     <Route path="/catnames" element={<CatNames />} />
+    <Route path="/boxBreathing" element={<BoxBreathing />} />
     <Route path="*" element={<Error404 />} />
   </Routes>
 )
