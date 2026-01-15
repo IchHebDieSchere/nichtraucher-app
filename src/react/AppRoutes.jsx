@@ -19,7 +19,7 @@ const AppRoutes = () => (
       <Route path="settings" element={<ProfileSettings />} />
     </Route>
     <Route path="/catnames" element={<CatNames />} />
-    <Route path="/Facts" element={<Facts />} />
+    <Route path="/facts" element={<Facts />} />
     <Route path="*" element={<Error404 />} />
   </Routes>
 )

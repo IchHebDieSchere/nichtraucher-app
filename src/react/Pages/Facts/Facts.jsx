@@ -38,7 +38,7 @@ const Facts = () => {
       <br />
       <Button
         variant="outlined"
-        onClick={() => navigate('/Feedback')}
+        onClick={() => navigate('/feedback')}
       >
         continue
       </Button>
