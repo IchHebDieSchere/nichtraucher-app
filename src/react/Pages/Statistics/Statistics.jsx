@@ -3,7 +3,7 @@ import React from 'react'
 import { Stack, Box, Button } from '@mui/material'
 
 const Statistics = ({ stats }) => {
-  const isWidgetAdded = false
+  const isWidgetAdded = false // temporär
 
   return (
     <Stack
@@ -24,7 +24,7 @@ const Statistics = ({ stats }) => {
         <div><b>Rauchfreie Tage:</b> {stats.smokeFreeDays}</div>
         <div><b>Abgeschlossene Missionen:</b> {stats.missions}</div>
       </Box>
-      {!isWidgetAdded && (
+      {!isWidgetAdded && ( // temporär
         <Button
           variant="contained"
           sx={{

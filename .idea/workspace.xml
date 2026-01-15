@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9cf536b-6577-487c-8164-3a03eaf19e54" name="Changes" comment="vorlesung zwischenstand">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useMainMenuTab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useMethods.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useCounter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useStats.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useStats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react/Pages/MainMenu/MainMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/MainMenu/MainMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +62,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -91,7 +91,7 @@
       <workItem from="1767877182686" duration="1500000" />
       <workItem from="1767878710047" duration="1034000" />
       <workItem from="1767891625548" duration="9971000" />
-      <workItem from="1768475833993" duration="6660000" />
+      <workItem from="1768475833993" duration="11505000" />
     </task>
     <task id="LOCAL-00001" summary="vorlesung">
       <option name="closed" value="true" />

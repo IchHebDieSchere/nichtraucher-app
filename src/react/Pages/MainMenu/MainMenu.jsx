@@ -6,13 +6,15 @@ import Statistics from '../Statistics/Statistics'
 import Methods from '../Methods/Methods'
 import useStats from '../../../hooks/useStats'
 import useMainMenuTab from '../../../hooks/useMainMenuTab'
+import useMethods from '../../../hooks/useMethods'
 
 const MainMenu = () => {
   const { tab, handleTabChange } = useMainMenuTab('statistik')
   const { stats, setStats } = useStats()
+  const { methods, setMethods } = useMethods()
 
   return (
-    <Stack alignItems="center" spacing={2}>
+    <Stack alignItems="center" spacing={8}>
       <ToggleButtonGroup value={tab} exclusive onChange={handleTabChange}>
         <ToggleButton value="statistik">Statistik</ToggleButton>
         <ToggleButton value="methoden">Methoden</ToggleButton>
@@ -21,7 +23,9 @@ const MainMenu = () => {
       {tab === 'statistik' && (
         <Statistics stats={stats} setStats={setStats} />
       )}
-      {tab === 'methoden' && <Methods />}
+      {tab === 'methoden' && (
+        <Methods methods={methods} setMethods={setMethods} />
+      )}
 
     </Stack>
   )

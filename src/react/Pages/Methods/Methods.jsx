@@ -2,8 +2,14 @@ import React from 'react'
 
 import { Stack, Box, Button, FormControlLabel, FormGroup, Checkbox } from '@mui/material'
 
-const Methods = () => {
+const Methods = ({ methods, setMethods }) => {
   const isWidgetAdded = false
+
+  // ?
+  const handleChange = (event) => {
+    const { name, checked } = event.target
+    setMethods(prev => ({ ...prev, [name]: checked }))
+  }
 
   return (
     <Stack
@@ -21,9 +27,9 @@ const Methods = () => {
         }}
       >
         <FormGroup>
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Minigame" />
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Atemübung" />
-          <FormControlLabel control={<Checkbox defaultChecked />} label="Fakten & Vorteile" />
+          <FormControlLabel control={<Checkbox name="minigame" checked={methods.minigame} onChange={handleChange} />} label="Minigame" />
+          <FormControlLabel control={<Checkbox name="breathing" checked={methods.breathing} onChange={handleChange} />} label="Atemübung" />
+          <FormControlLabel control={<Checkbox name="facts" checked={methods.facts} onChange={handleChange} />} label="Fakten & Vorteile" />
         </FormGroup>
       </Box>
       {!isWidgetAdded && (
