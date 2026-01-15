@@ -1,25 +1,25 @@
-import React from "react";
+import React from 'react'
 
-import { Stack, Grid2 } from "@mui/material";
+import { Stack, Grid2 } from '@mui/material'
 
-import HomescreenButton from "../Components/HomescreenButton";
-import HomescreenWidget from "../Components/HomescreenWidget";
+import HomescreenButton from '../Components/HomescreenButton'
+import HomescreenWidget from '../Components/HomescreenWidget'
 
 const Homescreen = () => (
   <Stack
     sx={{
-      height: "100%",
-      backgroundColor: "lightgray",
+      height: '100%',
+      backgroundColor: 'lightgray'
     }}
   >
     <Stack
       justifyContent="flex-start"
       alignItems="flex-start"
       sx={{
-        backgroundColor: "black",
-        height: "50px",
+        backgroundColor: 'black',
+        height: '50px'
       }}
-    ></Stack>
+    />
     <Grid2
       container
       columns={4}
@@ -29,44 +29,44 @@ const Homescreen = () => (
       sx={{ marginTop: 4, paddingX: 4 }}
     >
       <Grid2 size={1}>
-        <HomescreenButton label="Message"></HomescreenButton>
+        <HomescreenButton label="Message" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Camera"></HomescreenButton>
+        <HomescreenButton label="Camera" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Gallery"></HomescreenButton>
+        <HomescreenButton label="Gallery" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Maps"></HomescreenButton>
+        <HomescreenButton label="Maps" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Calendar"></HomescreenButton>
+        <HomescreenButton label="Calendar" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Setting"></HomescreenButton>
+        <HomescreenButton label="Setting" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Weather"></HomescreenButton>
+        <HomescreenButton label="Weather" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Music"></HomescreenButton>
+        <HomescreenButton label="Music" />
       </Grid2>
       <Grid2 size={2}>
-        <HomescreenWidget></HomescreenWidget>
+        <HomescreenWidget />
       </Grid2>
     </Grid2>
-    <Stack></Stack>
+    <Stack />
     <Stack
       justifyContent="flex-end"
       alignItems="flex-end"
       sx={{
-        backgroundColor: "black",
-        height: "50px",
-        marginTop: "auto",
+        backgroundColor: 'black',
+        height: '50px',
+        marginTop: 'auto'
       }}
-    ></Stack>
+    />
   </Stack>
-);
+)
 
-export default Homescreen;
+export default Homescreen
