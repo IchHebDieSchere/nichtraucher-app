@@ -25,7 +25,7 @@ const AppRoutes = () => (
       <Route path="settings" element={<ProfileSettings />} />
     </Route>
     <Route path="/catnames" element={<CatNames />} />
-    <Route path="/BoxBreathing" element={<BoxBreathing />} />
+    <Route path="/boxBreathing" element={<BoxBreathing />} />
     <Route path="*" element={<Error404 />} />
   </Routes>
 )
