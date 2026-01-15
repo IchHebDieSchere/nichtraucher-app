@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Stack, Box, Button } from '@mui/material'
 
-const Statistics = () => {
+const Statistics = ({ stats }) => {
   const isWidgetAdded = false
 
   return (
@@ -20,9 +20,9 @@ const Statistics = () => {
           p: 1
         }}
       >
-        <div><b>Rauchverlangen unterdrückt:</b></div>
-        <div><b>Rauchfreie Tage:</b></div>
-        <div><b>Abgeschlossene Missionen:</b></div>
+        <div><b>Rauchverlangen unterdrückt:</b> {stats.cravings}</div>
+        <div><b>Rauchfreie Tage:</b> {stats.smokeFreeDays}</div>
+        <div><b>Abgeschlossene Missionen:</b> {stats.missions}</div>
       </Box>
       {!isWidgetAdded && (
         <Button

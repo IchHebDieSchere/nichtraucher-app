@@ -4,15 +4,19 @@ import { Stack, ToggleButtonGroup, ToggleButton } from '@mui/material'
 
 import Statistics from '../Statistics/Statistics'
 import Methods from '../Methods/Methods'
+import { loadStats, saveStats } from '../../../hooks/useStats'
 
 const MainMenu = () => {
-  // tab wird === statistik gesetzt
   const [tab, setTab] = React.useState('statistik')
+  const [stats, setStats] = React.useState(loadStats)
 
-  // function für tab change
   const handleTabChange = (event, newTab) => {
     if (newTab !== null) setTab(newTab)
   }
+
+  React.useEffect(() => {
+    saveStats(stats)
+  }, [stats])
 
   return (
     <Stack alignItems="center" spacing={2}>
@@ -21,7 +25,9 @@ const MainMenu = () => {
         <ToggleButton value="methoden">Methoden</ToggleButton>
       </ToggleButtonGroup>
 
-      {tab === 'statistik' && <Statistics />}
+      {tab === 'statistik' && (
+        <Statistics stats={stats} setStats={setStats} />
+      )}
       {tab === 'methoden' && <Methods />}
 
     </Stack>
