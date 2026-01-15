@@ -4,19 +4,12 @@ import { Stack, ToggleButtonGroup, ToggleButton } from '@mui/material'
 
 import Statistics from '../Statistics/Statistics'
 import Methods from '../Methods/Methods'
-import { loadStats, saveStats } from '../../../hooks/useStats'
+import useStats from '../../../hooks/useStats'
+import useMainMenuTab from '../../../hooks/useMainMenuTab'
 
 const MainMenu = () => {
-  const [tab, setTab] = React.useState('statistik')
-  const [stats, setStats] = React.useState(loadStats)
-
-  const handleTabChange = (event, newTab) => {
-    if (newTab !== null) setTab(newTab)
-  }
-
-  React.useEffect(() => {
-    saveStats(stats)
-  }, [stats])
+  const { tab, handleTabChange } = useMainMenuTab('statistik')
+  const { stats, setStats } = useStats()
 
   return (
     <Stack alignItems="center" spacing={2}>

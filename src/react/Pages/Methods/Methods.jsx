@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Stack, Box, Button } from '@mui/material'
+import { Stack, Box, Button, FormControlLabel, FormGroup, Checkbox } from '@mui/material'
 
 const Methods = () => {
   const isWidgetAdded = false
@@ -20,7 +20,11 @@ const Methods = () => {
           p: 1
         }}
       >
-        Lorem ipsum Methoden
+        <FormGroup>
+          <FormControlLabel control={<Checkbox defaultChecked />} label="Minigame" />
+          <FormControlLabel control={<Checkbox defaultChecked />} label="Atemübung" />
+          <FormControlLabel control={<Checkbox defaultChecked />} label="Fakten & Vorteile" />
+        </FormGroup>
       </Box>
       {!isWidgetAdded && (
         <Button

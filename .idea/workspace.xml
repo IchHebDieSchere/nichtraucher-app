@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c9cf536b-6577-487c-8164-3a03eaf19e54" name="Changes" comment="vorlesung zwischenstand">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useStats.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useMainMenuTab.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useCounter.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/useStats.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useStats.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react/Pages/MainMenu/MainMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/MainMenu/MainMenu.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +66,12 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\lenna\WebstormProjects\nichtraucher-app\src\hooks" />
+      <recent name="C:\Users\lenna\WebstormProjects\nichtraucher-app\src\utils" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -83,7 +91,7 @@
       <workItem from="1767877182686" duration="1500000" />
       <workItem from="1767878710047" duration="1034000" />
       <workItem from="1767891625548" duration="9971000" />
-      <workItem from="1768475833993" duration="2800000" />
+      <workItem from="1768475833993" duration="6660000" />
     </task>
     <task id="LOCAL-00001" summary="vorlesung">
       <option name="closed" value="true" />

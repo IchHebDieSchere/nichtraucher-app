@@ -1,4 +1,4 @@
-const storageKey = 'stats'
+import { useEffect, useState } from 'react'
 
 const defaultStats = {
   missions: 0,
@@ -6,14 +6,16 @@ const defaultStats = {
   smokeFreeDays: 0
 }
 
-export const loadStats = () => {
-  const storedValue = localStorage.getItem(storageKey)
+export default function useStats() {
+  const [stats, setStats] = useState(defaultStats)
 
-  if (storedValue !== null) {
-    return JSON.parse(storedValue)
-  } return defaultStats
-}
+  // use effect = findet nach render statt
+  useEffect(() => {
+    const stored = localStorage.getItem('stats')
+    if (stored) {
+      setStats(JSON.parse(stored))
+    }
+  }, []) // deps leer = useEffect wird nur einmal aufgerufen (bei [tab] bei jedem tab wechsel)
 
-export const saveStats = (stats) => {
-  localStorage.setItem(storageKey, JSON.stringify(stats))
+  return { stats, setStats }
 }
