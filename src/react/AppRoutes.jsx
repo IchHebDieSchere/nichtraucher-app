@@ -3,6 +3,7 @@ import React from 'react'
 import { Route, Routes } from 'react-router-dom'
 
 import CatNames from './Pages/CatNames/CatNames'
+import Facts from './Pages/Facts/Facts'
 import Profile from './Pages/Profile/Profile'
 import ProfileOverview from './Pages/Profile/ProfileOverview'
 import BoxBreathing from './Pages/BoxBreathing/BoxBreathing'
@@ -28,6 +29,7 @@ const AppRoutes = () => (
       <Route path="settings" element={<ProfileSettings />} />
     </Route>
     <Route path="/catnames" element={<CatNames />} />
+    <Route path="/facts" element={<Facts />} />
     <Route path="/minigame" element={<Minigame />} />
     <Route path="/boxBreathing" element={<BoxBreathing />} />
     <Route path="*" element={<Error404 />} />
