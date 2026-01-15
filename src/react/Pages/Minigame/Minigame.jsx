@@ -25,7 +25,7 @@ const Minigame = () => {
       <br />
       <Button
         variant="contained"
-        onClick={() => navigate('/Feedback')}
+        onClick={() => navigate('/feedback')}
       >
         Continue
       </Button>
