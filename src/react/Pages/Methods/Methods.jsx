@@ -2,8 +2,11 @@ import React from 'react'
 
 import { Stack, Box, Button, FormControlLabel, FormGroup, Checkbox } from '@mui/material'
 
+import useNavigation from '../../../hooks/useNavigation'
+
 const Methods = ({ methods, setMethods }) => {
   const isWidgetAdded = false
+  const routeTo = useNavigation()
 
   // ?
   const handleChange = (event) => {
@@ -35,6 +38,7 @@ const Methods = ({ methods, setMethods }) => {
       {!isWidgetAdded && (
         <Button
           variant="contained"
+          onClick={() => routeTo('/menu')}
           sx={{
             bgcolor: '#989595',
             zIndex: 100
@@ -46,6 +50,7 @@ const Methods = ({ methods, setMethods }) => {
 
       <Button
         variant="contained"
+        onClick={() => routeTo('/boxBreathing')}
         sx={{
           bgcolor: '#fc0303',
           color: 'fff',

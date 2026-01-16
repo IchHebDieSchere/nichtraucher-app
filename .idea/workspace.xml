@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9cf536b-6577-487c-8164-3a03eaf19e54" name="Changes" comment="vorlesung zwischenstand">
-      <change afterPath="$PROJECT_DIR$/src/hooks/useMethods.js" afterDir="false" />
+    <list default="true" id="b2177a1a-a17f-455d-8cec-1f45112bacdd" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/hooks/useNavigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react/Pages/MainMenu/MainMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/MainMenu/MainMenu.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/react/AppRoutes.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/AppRoutes.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,19 +22,12 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JSX File" />
         <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="I5_StatsMethodsLogic" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -42,93 +38,60 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/IchHebDieSchere/nichtraucher-app.git&quot;,
-    &quot;accountId&quot;: &quot;31cd50f7-0620-4ffa-9af2-f12becc3ba70&quot;
+    &quot;accountId&quot;: &quot;892b94a3-fcdf-4994-abc3-4df7f00df295&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 5
+  &quot;associatedIndex&quot;: 3
 }</component>
-  <component name="ProjectId" id="37yS5Y8r9hnKCTpSdjqRjHlkFxU" />
+  <component name="ProjectId" id="38J0871tkuX5VqmaSMSEh7cMS5p" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "I5__StatsMethodsLogic",
+    "ignore.virus.scanning.warn.message": "true",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2025.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\lenna\WebstormProjects\nichtraucher-app\src\hooks" />
-      <recent name="C:\Users\lenna\WebstormProjects\nichtraucher-app\src\utils" />
-    </key>
-  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.242" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="c9cf536b-6577-487c-8164-3a03eaf19e54" name="Changes" comment="" />
-      <created>1767873640046</created>
+      <changelist id="b2177a1a-a17f-455d-8cec-1f45112bacdd" name="Changes" comment="" />
+      <created>1768502204251</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1767873640046</updated>
-      <workItem from="1767873641680" duration="625000" />
-      <workItem from="1767874286742" duration="965000" />
-      <workItem from="1767877182686" duration="1500000" />
-      <workItem from="1767878710047" duration="1034000" />
-      <workItem from="1767891625548" duration="9971000" />
-      <workItem from="1768475833993" duration="11505000" />
+      <updated>1768502204251</updated>
+      <workItem from="1768502205926" duration="63000" />
+      <workItem from="1768502277444" duration="748000" />
+      <workItem from="1768503040645" duration="575000" />
+      <workItem from="1768554749406" duration="2572000" />
     </task>
-    <task id="LOCAL-00001" summary="vorlesung">
-      <option name="closed" value="true" />
-      <created>1767962232536</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1767962232536</updated>
-    </task>
-    <task id="LOCAL-00002" summary="vorlesung zwischenstand">
-      <option name="closed" value="true" />
-      <created>1767962674411</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1767962674411</updated>
-    </task>
-    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="vorlesung" />
-    <MESSAGE value="vorlesung zwischenstand" />
-    <option name="LAST_COMMIT_MESSAGE" value="vorlesung zwischenstand" />
   </component>
 </project>

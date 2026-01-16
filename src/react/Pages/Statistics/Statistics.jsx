@@ -2,8 +2,11 @@ import React from 'react'
 
 import { Stack, Box, Button } from '@mui/material'
 
+import useNavigation from '../../../hooks/useNavigation'
+
 const Statistics = ({ stats }) => {
   const isWidgetAdded = false // temporär
+  const routeTo = useNavigation()
 
   return (
     <Stack
@@ -27,6 +30,7 @@ const Statistics = ({ stats }) => {
       {!isWidgetAdded && ( // temporär
         <Button
           variant="contained"
+          onClick={() => routeTo('/menu')}
           sx={{
             bgcolor: '#989595',
             zIndex: 100
@@ -38,6 +42,7 @@ const Statistics = ({ stats }) => {
 
       <Button
         variant="contained"
+        onClick={() => routeTo('/boxBreathing')}
         sx={{
           bgcolor: '#fc0303',
           color: 'fff',
