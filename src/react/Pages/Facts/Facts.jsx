@@ -1,20 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Stack, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 
+const facts = [
+  'Tobacco kills up to half of its users who don’t quit',
+  'Tobacco kills more than 7 million people each year, including an estimated 1.6 million non-smokers who are exposed to second-hand smoke'
+]
+
+const getRandomFact = () => {
+  const randomIndex = Math.floor(Math.random() * facts.length)
+  return facts[randomIndex]
+}
+
+const [fact, setFact] = useState(() => getRandomFact())
+
 const Facts = () => {
-  const facts = [
-    'Tobacco kills up to half of its users who don’t quit',
-    'Tobacco kills more than 7 million people each year, including an estimated 1.6 million non-smokers who are exposed to second-hand smoke'
-  ]
-
-  const getRandomFact = () => {
-    const randomIndex = Math.floor(Math.random() * facts.length)
-    return facts[randomIndex]
-  }
-
-  const [fact, setFact] = React.useState(() => getRandomFact())
-
   const navigate = useNavigate()
 
   return (
