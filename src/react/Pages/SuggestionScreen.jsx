@@ -1,15 +1,15 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Stack, Typography } from '@mui/material'
+import { Stack, Typography, Button } from '@mui/material'
 
 const SuggestionScreen = () => {
   const navigate = useNavigate()
 
   return (
-    <Stack flex="1 1 auto" justifyContent="space-between" padding={2}>
+    <Stack flexGrow={1} justifyContent="space-between" p={2}>
 
       <Stack alignItems="flex-start" marginTop={3} marginLeft={2}>
-        <button type="button" onClick={() => { navigate(-1) }}> Zurück</button>
+        <Button variant="contained" onClick={() => navigate(-1)}> Zurück</Button>
       </Stack>
 
       <Stack alignItems="center">
@@ -17,8 +17,8 @@ const SuggestionScreen = () => {
       </Stack>
 
       <Stack direction="row" justifyContent="center" spacing={6} marginBottom={20}>
-        <button type="button" onClick={() => navigate('/method')}>Ja</button>
-        <button type="button" onClick={() => navigate('/noidea')}>Nein</button>
+        <Button variant="contained" onClick={() => navigate('/method')}>Ja</Button>
+        <Button variant="contained" onClick={() => navigate('/noidea')}>Nein</Button>
       </Stack>
 
     </Stack>
