@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Stack } from '@mui/material'
 
@@ -7,6 +7,13 @@ const STORAGE_KEY = 'userName'
 const WelcomeScreen = () => {
   const navigate = useNavigate()
   const [name, setName] = useState('')
+
+  useEffect(() => {
+    const savedValue = localStorage.getItem(STORAGE_KEY)
+    if (savedValue) {
+      setName(savedValue)
+    }
+  }, [])
 
   const handleNextClick = () => {
     if (!name) {
