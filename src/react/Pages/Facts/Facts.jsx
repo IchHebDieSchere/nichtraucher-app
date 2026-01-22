@@ -23,7 +23,7 @@ const Facts = () => {
   // Random fact is being generated upon first loading the page from allFacts
   const [currentFact, setCurrentFact] = useState(() => getRandomFact(allFacts))
 
-  // Array of facts is being loaded, currently displayed facts is filtered out
+  // Array of facts is being loaded, currently displayed fact is filtered out
   const [remainingFacts, setRemainingFacts] = useState(() => allFacts.filter(f => f.id !== currentFact.id))
 
   const showNextFact = () => {
@@ -38,7 +38,9 @@ const Facts = () => {
 
       setCurrentFact(nextFact)
       setRemainingFacts(
-        freshPool.filter(f => f.id !== nextFact.id)
+        freshPool.filter(
+          f => f.id !== nextFact.id
+        )
       )
       return
     }
@@ -46,7 +48,9 @@ const Facts = () => {
     const nextFact = getRandomFact(remainingFacts)
 
     setCurrentFact(nextFact)
-    setRemainingFacts(prev => prev.filter(f => f.id !== nextFact.id))
+    setRemainingFacts(prev => prev.filter(
+      f => f.id !== nextFact.id
+    ))
   }
 
   return (
@@ -62,13 +66,19 @@ const Facts = () => {
 
       <h4>{currentFact.fact}</h4>
 
-      <Button variant="contained" onClick={showNextFact}>
+      <Button
+        variant="contained"
+        onClick={showNextFact}
+      >
         Give me another fact
       </Button>
 
       <br />
 
-      <Button variant="outlined" onClick={() => navigate('/feedback')}>
+      <Button
+        variant="outlined"
+        onClick={() => navigate('/feedback')}
+      >
         continue
       </Button>
     </Stack>
