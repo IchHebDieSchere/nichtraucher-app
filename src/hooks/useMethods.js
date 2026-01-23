@@ -6,6 +6,8 @@ const initialState = {
   facts: true
 }
 
+// schauen warum initialState keine auswirkung hat -> race conditions?
+
 export default function useMethods() {
   const [methods, setMethods] = useState(initialState)
 

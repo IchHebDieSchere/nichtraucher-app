@@ -4,9 +4,12 @@ import { Stack, Box, Button } from '@mui/material'
 import { useNavigate } from 'react-router'
 import useWidgetAdded from '../../../hooks/useWidgetAdded'
 
-const Statistics = ({ stats }) => {
+// https://mui.com/x/react-charts/ für statistiken
+
+const Statistics = ({ stats, incrementMission }) => {
   const { isWidgetAdded, markWidgetAdded } = useWidgetAdded()
   const navigate = useNavigate()
+  const { cravings, smokeFreeDays, missions } = stats
 
   return (
     <Stack
@@ -23,17 +26,27 @@ const Statistics = ({ stats }) => {
           p: 1
         }}
       >
-        <div><b>Rauchverlangen unterdrückt:</b> {stats.cravings}</div>
-        <div><b>Rauchfreie Tage:</b> {stats.smokeFreeDays}</div>
-        <div><b>Abgeschlossene Missionen:</b> {stats.missions}</div>
+        <div>
+          <b>Rauchverlangen unterdrückt: </b>
+          {cravings}
+        </div>
+        <div>
+          <b>Rauchfreie Tage: </b>
+          {smokeFreeDays}
+        </div>
+        <div>
+          <b>Abgeschlossene Missionen: </b>
+          {missions}
+        </div>
       </Box>
-      {!isWidgetAdded && ( // temporär
+      {!isWidgetAdded && (
         <Button
           variant="contained"
           onClick={() => {
-            navigate('/screen4')
-            markWidgetAdded()
-          }} // mit screen von patty replacen
+            // navigate('/screen4') // mit screen von patty replacen
+            // markWidgetAdded()
+            incrementMission()
+          }}
           sx={{
             bgcolor: '#989595',
             zIndex: 100

@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 
 const defaultStats = {
-  missions: 0,
   cravings: 0,
-  smokeFreeDays: 0
+  smokeFreeDays: 0,
+  missions: 0
 }
+
+// local storage implementieren
 
 export default function useStats() {
   const [stats, setStats] = useState(defaultStats)
@@ -17,5 +19,17 @@ export default function useStats() {
     }
   }, []) // deps leer = useEffect wird nur einmal aufgerufen (bei [tab] bei jedem tab wechsel)
 
-  return { stats, setStats }
+  const incrementMission = () => {
+    setStats(prevState => ({
+      ...prevState, missions: prevState.missions + 1 /// ... nimmt alle werte aus stats -> cravings, missions
+    }))
+  }
+
+  const incrementCraving = () => {
+    setStats(prevState => ({
+      ...prevState, cravings: prevState.cravings + 1
+    }))
+  }
+
+  return { stats, setStats, incrementMission, incrementCraving }
 }
