@@ -2,11 +2,12 @@ import React from 'react'
 
 import { Stack, Box, Button, FormControlLabel, FormGroup, Checkbox } from '@mui/material'
 
-import useNavigation from '../../../hooks/useNavigation'
+import { useNavigate } from 'react-router'
+import useWidgetAdded from '../../../hooks/useWidgetAdded'
 
 const Methods = ({ methods, setMethods }) => {
-  const isWidgetAdded = false
-  const routeTo = useNavigation()
+  const { isWidgetAdded, markWidgetAdded, resetWidgetAdded } = useWidgetAdded()
+  const navigate = useNavigate()
 
   // ?
   const handleChange = (event) => {
@@ -38,7 +39,10 @@ const Methods = ({ methods, setMethods }) => {
       {!isWidgetAdded && (
         <Button
           variant="contained"
-          onClick={() => routeTo('/menu')}
+          onClick={() => {
+            // navigate('/screen4') // mit pattys screen replacen + sie muss markWidgetAdded einbauen?
+            markWidgetAdded()
+          }}
           sx={{
             bgcolor: '#989595',
             zIndex: 100
@@ -50,7 +54,7 @@ const Methods = ({ methods, setMethods }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/boxBreathing')}
+        onClick={() => navigate('/boxBreathing')}
         sx={{
           bgcolor: '#fc0303',
           color: 'fff',
@@ -58,6 +62,19 @@ const Methods = ({ methods, setMethods }) => {
         }}
       >
         Notfall
+      </Button>
+      <Button //temporär später entfernen
+        variant="contained"
+        onClick={() => {
+          resetWidgetAdded()
+        }}
+        sx={{
+          bgcolor: '#b05f5f',
+          color: 'fff',
+          zIndex: 98
+        }}
+      >
+        resetWidget
       </Button>
     </Stack>
   )

@@ -1,12 +1,12 @@
 import React from 'react'
 
 import { Stack, Box, Button } from '@mui/material'
-
-import useNavigation from '../../../hooks/useNavigation'
+import { useNavigate } from 'react-router'
+import useWidgetAdded from '../../../hooks/useWidgetAdded'
 
 const Statistics = ({ stats }) => {
-  const isWidgetAdded = false // temporär
-  const routeTo = useNavigation()
+  const { isWidgetAdded, markWidgetAdded } = useWidgetAdded()
+  const navigate = useNavigate()
 
   return (
     <Stack
@@ -30,7 +30,10 @@ const Statistics = ({ stats }) => {
       {!isWidgetAdded && ( // temporär
         <Button
           variant="contained"
-          onClick={() => routeTo('/menu')}
+          onClick={() => {
+            navigate('/screen4')
+            markWidgetAdded()
+          }} // mit screen von patty replacen
           sx={{
             bgcolor: '#989595',
             zIndex: 100
@@ -42,7 +45,7 @@ const Statistics = ({ stats }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/boxBreathing')}
+        onClick={() => navigate('/boxBreathing')}
         sx={{
           bgcolor: '#fc0303',
           color: 'fff',
