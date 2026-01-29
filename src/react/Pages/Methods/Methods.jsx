@@ -1,12 +1,11 @@
 import React from 'react'
 
 import { Stack, Box, Button, FormControlLabel, RadioGroup, Radio } from '@mui/material'
-
-import useNavigation from '../../../hooks/useNavigation'
+import { useNavigate } from 'react-router'
 
 const Methods = ({ selectedMethod, setSelectedMethod }) => {
   const isWidgetAdded = false
-  const routeTo = useNavigation()
+  const routeTo = useNavigate()
 
   const handleRadioChange = (event) => {
     setSelectedMethod(event.target.value)

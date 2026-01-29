@@ -10,25 +10,23 @@ import useMethods from '../../../hooks/useMethods'
 
 const MainMenu = () => {
   const { tab, handleTabChange } = useMainMenuTab('statistik')
-  const { stats, setStats } = useStats()
+  const { stats, setStats, incrementMission } = useStats()
   const { selectedMethod, setSelectedMethod } = useMethods()
 
   return (
     <Stack alignItems="center" spacing={8}>
       <ToggleButtonGroup value={tab} exclusive onChange={handleTabChange}>
-        <ToggleButton value="statistik">Statistics</ToggleButton>
-        <ToggleButton value="methoden">Methods</ToggleButton>
+        <ToggleButton value="statistik">Statistik</ToggleButton>
+        <ToggleButton value="methoden">Methoden</ToggleButton>
       </ToggleButtonGroup>
 
       {tab === 'statistik' && (
-        <Statistics stats={stats} setStats={setStats} />
+        <Statistics stats={stats} setStats={setStats} incrementMission={incrementMission} />
       )}
       {tab === 'methoden' && (
-        <Methods
-          selectedMethod={selectedMethod}
-          setSelectedMethod={setSelectedMethod}
-        />
+        <Methods selectedMethod={selectedMethod} setSelectedMethod={setSelectedMethod} />
       )}
+
     </Stack>
   )
 }

@@ -1,12 +1,11 @@
 import React from 'react'
 
 import { Stack, Box, Button } from '@mui/material'
-
-import useNavigation from '../../../hooks/useNavigation'
+import { useNavigate } from 'react-router'
 
 const Statistics = ({ stats }) => {
   const isWidgetAdded = false // temporär
-  const routeTo = useNavigation()
+  const routeTo = useNavigate()
 
   // Welche Methode wurde wie häufig benutzt?
   // Bewertungen
