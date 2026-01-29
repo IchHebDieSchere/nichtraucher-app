@@ -1,24 +1,20 @@
 import { useEffect, useState } from 'react'
 
-const initialState = {
-  minigame: true,
-  breating: true,
-  facts: true
-}
+const STORAGE_KEY = 'selectedMethod'
 
 export default function useMethods() {
-  const [methods, setMethods] = useState(initialState)
+  const [selectedMethod, setSelectedMethod] = useState('')
 
   useEffect(() => {
-    const stored = localStorage.getItem('methods')
-    if (stored) {
-      setMethods(JSON.parse(stored))
-    }
+    const stored = localStorage.getItem(STORAGE_KEY)
+    if (stored) setSelectedMethod(stored)
   }, [])
 
   useEffect(() => {
-    localStorage.setItem('methods', JSON.stringify(methods))
-  }, [methods])
+    if (selectedMethod) {
+      localStorage.setItem(STORAGE_KEY, selectedMethod)
+    }
+  }, [selectedMethod])
 
-  return { methods, setMethods }
+  return { selectedMethod, setSelectedMethod }
 }

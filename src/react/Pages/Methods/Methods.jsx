@@ -1,25 +1,19 @@
 import React from 'react'
 
-import { Stack, Box, Button, FormControlLabel, FormGroup, Checkbox } from '@mui/material'
+import { Stack, Box, Button, FormControlLabel, RadioGroup, Radio } from '@mui/material'
 
 import useNavigation from '../../../hooks/useNavigation'
 
-const Methods = ({ methods, setMethods }) => {
+const Methods = ({ selectedMethod, setSelectedMethod }) => {
   const isWidgetAdded = false
   const routeTo = useNavigation()
 
-  // ?
-  const handleChange = (event) => {
-    const { name, checked } = event.target
-    setMethods(prev => ({ ...prev, [name]: checked }))
+  const handleRadioChange = (event) => {
+    setSelectedMethod(event.target.value)
   }
 
   return (
-    <Stack
-      alignItems="center"
-      justifyContent="center"
-      spacing={1}
-    >
+    <Stack alignItems="center" justifyContent="center" spacing={1}>
       <Box
         sx={{
           width: 360,
@@ -29,20 +23,22 @@ const Methods = ({ methods, setMethods }) => {
           p: 1
         }}
       >
-        <FormGroup>
-          <FormControlLabel control={<Checkbox name="minigame" checked={methods.minigame} onChange={handleChange} />} label="Minigame" />
-          <FormControlLabel control={<Checkbox name="breathing" checked={methods.breathing} onChange={handleChange} />} label="Atemübung" />
-          <FormControlLabel control={<Checkbox name="facts" checked={methods.facts} onChange={handleChange} />} label="Fakten & Vorteile" />
-        </FormGroup>
+        <RadioGroup
+          name="method"
+          value={selectedMethod}
+          onChange={handleRadioChange}
+        >
+          <FormControlLabel value="game" control={<Radio />} label="Minigame" />
+          <FormControlLabel value="breathing" control={<Radio />} label="Breathing Exercise" />
+          <FormControlLabel value="facts" control={<Radio />} label="Facts & Advantages" />
+        </RadioGroup>
       </Box>
+
       {!isWidgetAdded && (
         <Button
           variant="contained"
           onClick={() => routeTo('/menu')}
-          sx={{
-            bgcolor: '#989595',
-            zIndex: 100
-          }}
+          sx={{ bgcolor: '#989595', zIndex: 100 }}
         >
           Widget
         </Button>
@@ -51,13 +47,9 @@ const Methods = ({ methods, setMethods }) => {
       <Button
         variant="contained"
         onClick={() => routeTo('/boxBreathing')}
-        sx={{
-          bgcolor: '#fc0303',
-          color: 'fff',
-          zIndex: 99
-        }}
+        sx={{ bgcolor: '#fc0303', color: '#fff', zIndex: 99 }}
       >
-        Notfall
+        Emergency
       </Button>
     </Stack>
   )

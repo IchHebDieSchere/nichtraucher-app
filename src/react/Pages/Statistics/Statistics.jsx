@@ -8,12 +8,11 @@ const Statistics = ({ stats }) => {
   const isWidgetAdded = false // temporär
   const routeTo = useNavigation()
 
+  // Welche Methode wurde wie häufig benutzt?
+  // Bewertungen
+
   return (
-    <Stack
-      alignItems="center"
-      justifyContent="center"
-      spacing={1}
-    >
+    <Stack alignItems="center" justifyContent="center" spacing={1}>
       <Box
         sx={{
           width: 360,
@@ -23,18 +22,16 @@ const Statistics = ({ stats }) => {
           p: 1
         }}
       >
-        <div><b>Rauchverlangen unterdrückt:</b> {stats.cravings}</div>
-        <div><b>Rauchfreie Tage:</b> {stats.smokeFreeDays}</div>
-        <div><b>Abgeschlossene Missionen:</b> {stats.missions}</div>
+        <div><b>Cravings suppressed:</b> {stats.cravings}</div>
+        <div><b>Smoke free days:</b> {stats.smokeFreeDays}</div>
+        <div><b>Missions completed:</b> {stats.missions}</div>
       </Box>
-      {!isWidgetAdded && ( // temporär
+
+      {!isWidgetAdded && (
         <Button
           variant="contained"
           onClick={() => routeTo('/menu')}
-          sx={{
-            bgcolor: '#989595',
-            zIndex: 100
-          }}
+          sx={{ bgcolor: '#989595', zIndex: 100 }}
         >
           Widget
         </Button>
@@ -43,13 +40,9 @@ const Statistics = ({ stats }) => {
       <Button
         variant="contained"
         onClick={() => routeTo('/boxBreathing')}
-        sx={{
-          bgcolor: '#fc0303',
-          color: 'fff',
-          zIndex: 99
-        }}
+        sx={{ bgcolor: '#fc0303', color: '#fff', zIndex: 99 }}
       >
-        Notfall
+        Emergency
       </Button>
     </Stack>
   )
