@@ -10,10 +10,6 @@ const FeedbackScreen = () => {
   const [mood, setMood] = useState('')
 
   const handleNextClick = () => {
-    if (!mood) {
-      return
-    }
-
     if (mood === 'bad') {
       navigate('/method')
     } else if (mood === 'ok') {
