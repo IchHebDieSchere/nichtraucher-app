@@ -1,5 +1,5 @@
-import { Stack, Box, Button } from '@mui/material'
 import React, { useEffect, useState } from 'react'
+import { Stack, Box, Button } from '@mui/material'
 import { ArrowBack, ArrowDownward, ArrowForward, ArrowUpward } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom'
 
@@ -85,12 +85,14 @@ const BoxBreathing = () => {
               transform: 'translateX(-50%)'
             }}
           >
-            {ArrowStep.map((i) => (
-              <ArrowForward
-                key={`top-${i}`}
-                color={isArrowActive('top', i, side, step) ? 'primary' : 'disabled'}
-              />
-            ))}
+            {
+                ArrowStep.map((i) => (
+                  <ArrowForward
+                    key={`top-${i}`}
+                    color={isArrowActive('top', i, side, step) ? 'primary' : 'disabled'}
+                  />
+                ))
+            }
           </Stack>
 
           {/* Right Side Arrows */}
@@ -104,12 +106,14 @@ const BoxBreathing = () => {
               transform: 'translateY(-50%)'
             }}
           >
-            {ArrowStep.map((i) => (
-              <ArrowDownward
-                key={`right-${i}`}
-                color={isArrowActive('right', i, side, step) ? 'primary' : 'disabled'}
-              />
-            ))}
+            {
+                ArrowStep.map((i) => (
+                  <ArrowDownward
+                    key={`right-${i}`}
+                    color={isArrowActive('right', i, side, step) ? 'primary' : 'disabled'}
+                  />
+                ))
+            }
           </Stack>
 
           {/* Bottom Arrows */}
@@ -123,12 +127,14 @@ const BoxBreathing = () => {
               transform: 'translateX(-50%)'
             }}
           >
-            {ArrowStep.map((i) => (
-              <ArrowBack
-                key={`bottom-${i}`}
-                color={isArrowActive('bottom', i, side, step) ? 'primary' : 'disabled'}
-              />
-            ))}
+            {
+                ArrowStep.map((i) => (
+                  <ArrowBack
+                    key={`bottom-${i}`}
+                    color={isArrowActive('bottom', i, side, step) ? 'primary' : 'disabled'}
+                  />
+                ))
+            }
           </Stack>
 
           {/* Left Side Arrows */}
@@ -142,18 +148,20 @@ const BoxBreathing = () => {
               transform: 'translateY(-50%)'
             }}
           >
-            {ArrowStep.map((i) => (
-              <ArrowUpward
-                key={`left-${i}`}
-                color={isArrowActive('left', i, side, step) ? 'primary' : 'disabled'}
-              />
-            ))}
+            {
+                ArrowStep.map((i) => (
+                  <ArrowUpward
+                    key={`left-${i}`}
+                    color={isArrowActive('left', i, side, step) ? 'primary' : 'disabled'}
+                  />
+                ))
+            }
           </Stack>
 
         </Box>
       </Stack>
       <Button
-        variant="contained"
+        variant="outlined"
         onClick={() => navigate('/feedback')}
       >
         Continue
