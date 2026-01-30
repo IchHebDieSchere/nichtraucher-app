@@ -16,7 +16,7 @@ export default function useWidgetAdded() {
 
   const resetWidgetAdded = () => {
     localStorage.setItem(key, 'false')
-    setIsWidgetAdded(true)
+    setIsWidgetAdded(false)
   }
 
   return { isWidgetAdded, markWidgetAdded, resetWidgetAdded }

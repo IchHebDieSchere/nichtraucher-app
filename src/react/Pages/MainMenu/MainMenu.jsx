@@ -14,7 +14,7 @@ const MainMenu = () => {
   const { selectedMethod, setSelectedMethod } = useMethods()
 
   return (
-    <Stack alignItems="center" spacing={8}>
+    <Stack alignItems="center" spacing={6}>
       <ToggleButtonGroup value={tab} exclusive onChange={handleTabChange}>
         <ToggleButton value="statistik">Statistik</ToggleButton>
         <ToggleButton value="methoden">Methoden</ToggleButton>

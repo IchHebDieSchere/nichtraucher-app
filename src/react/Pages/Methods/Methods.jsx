@@ -2,9 +2,10 @@ import React from 'react'
 
 import { Stack, Box, Button, FormControlLabel, RadioGroup, Radio } from '@mui/material'
 import { useNavigate } from 'react-router'
+import useWidgetAdded from '../../../hooks/useWidgetAdded'
 
 const Methods = ({ selectedMethod, setSelectedMethod }) => {
-  const isWidgetAdded = false
+  const { isWidgetAdded, markWidgetAdded } = useWidgetAdded()
   const routeTo = useNavigate()
 
   const handleRadioChange = (event) => {
@@ -36,7 +37,10 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
       {!isWidgetAdded && (
         <Button
           variant="contained"
-          onClick={() => routeTo('/menu')}
+          onClick={() => {
+            routeTo('/tutorial')
+            markWidgetAdded()
+          }}
           sx={{ bgcolor: '#989595', zIndex: 100 }}
         >
           Widget

@@ -2,9 +2,10 @@ import React from 'react'
 
 import { Stack, Box, Button } from '@mui/material'
 import { useNavigate } from 'react-router'
+import useWidgetAdded from '../../../hooks/useWidgetAdded'
 
 const Statistics = ({ stats }) => {
-  const isWidgetAdded = false // temporär
+  const { isWidgetAdded, markWidgetAdded } = useWidgetAdded()
   const routeTo = useNavigate()
 
   // Welche Methode wurde wie häufig benutzt?
@@ -21,15 +22,18 @@ const Statistics = ({ stats }) => {
           p: 1
         }}
       >
-        <div><b>Cravings suppressed:</b> {stats.cravings}</div>
-        <div><b>Smoke free days:</b> {stats.smokeFreeDays}</div>
-        <div><b>Missions completed:</b> {stats.missions}</div>
+        <div>Cravings suppressed: {stats.cravings}</div>
+        <div>Smoke free days: {stats.smokeFreeDays}</div>
+        <div>Missions completed: {stats.missions}</div>
       </Box>
 
       {!isWidgetAdded && (
         <Button
           variant="contained"
-          onClick={() => routeTo('/menu')}
+          onClick={() => {
+            routeTo('/tutorial')
+            markWidgetAdded()
+          }}
           sx={{ bgcolor: '#989595', zIndex: 100 }}
         >
           Widget
