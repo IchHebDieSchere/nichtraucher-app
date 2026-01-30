@@ -16,10 +16,6 @@ const WelcomeScreen = () => {
   }, [])
 
   const handleNextClick = () => {
-    if (!name) {
-      return
-    }
-
     localStorage.setItem(STORAGE_KEY, name)
     navigate('/method')
   }
