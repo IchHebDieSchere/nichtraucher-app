@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Stack, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import tetrisImg from './tetris.png'
@@ -24,7 +23,7 @@ const Minigame = () => {
       />
       <br />
       <Button
-        variant="contained"
+        variant="outlined"
         onClick={() => navigate('/feedback')}
       >
         Continue
