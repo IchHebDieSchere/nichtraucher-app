@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Stack, Grid2 } from '@mui/material'
 
-import HomescreenButton from '../Components/HomescreenButton'
-import HomescreenWidget from '../Components/HomescreenWidget'
+import HomeScreenButton from '../Components/HomeScreenButton'
+import HomeScreenWidget from '../Components/HomeScreenWidget'
 
-const Homescreen = () => (
+const HomeScreen = () => (
   <Stack
     sx={{
       height: '100%',
@@ -29,31 +29,31 @@ const Homescreen = () => (
       sx={{ marginTop: 4, paddingX: 4 }}
     >
       <Grid2 size={1}>
-        <HomescreenButton label="Message" />
+        <HomeScreenButton label="Message" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Camera" />
+        <HomeScreenButton label="Camera" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Gallery" />
+        <HomeScreenButton label="Gallery" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Maps" />
+        <HomeScreenButton label="Maps" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Calendar" />
+        <HomeScreenButton label="Calendar" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Setting" />
+        <HomeScreenButton label="Setting" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Weather" />
+        <HomeScreenButton label="Weather" />
       </Grid2>
       <Grid2 size={1}>
-        <HomescreenButton label="Music" />
+        <HomeScreenButton label="Music" />
       </Grid2>
       <Grid2 size={2}>
-        <HomescreenWidget />
+        <HomeScreenWidget />
       </Grid2>
     </Grid2>
     <Stack />
@@ -69,4 +69,4 @@ const Homescreen = () => (
   </Stack>
 )
 
-export default Homescreen
+export default HomeScreen
