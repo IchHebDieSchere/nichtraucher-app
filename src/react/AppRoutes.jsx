@@ -17,6 +17,8 @@ import SplashScreen from './Pages/SplashScreen'
 import WelcomeScreen from './Pages/WelcomeScreen'
 import MethodScreen from './Pages/MethodScreen'
 
+import Homescreen from './Pages/Homescreen'
+
 const AppRoutes = () => (
   <Routes>
     <Route path="/suggestion" element={<SuggestionScreen />} />
@@ -33,6 +35,7 @@ const AppRoutes = () => (
     <Route path="/minigame" element={<Minigame />} />
     <Route path="/boxBreathing" element={<BoxBreathing />} />
     <Route path="*" element={<Error404 />} />
+    <Route path="/homescreen" element={<Homescreen />} />
   </Routes>
 )
 
