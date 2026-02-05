@@ -30,7 +30,6 @@ const AppLayout = () => {
       setTimeout(() => {
         setSlide(false)
       }, 3000)
-      window.history.replaceState({}, document.title)
     }
 
     if (location.pathname === '/menu' && location.state?.showReminder) {
@@ -39,7 +38,6 @@ const AppLayout = () => {
       setTimeout(() => {
         setSlide(false)
       }, 3000)
-      window.history.replaceState({}, document.title)
     }
   }, [location])
 
