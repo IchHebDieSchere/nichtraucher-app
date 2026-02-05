@@ -15,7 +15,7 @@ const FeedbackScreen = () => {
     } else if (mood === 'ok') {
       navigate('/suggestion')
     } else if (mood === 'good') {
-      navigate('/noidea')
+      navigate('/menu')
     }
   }
 

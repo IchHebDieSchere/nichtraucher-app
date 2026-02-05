@@ -39,7 +39,7 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/tutorial')}
+        onClick={() => routeTo('/placement')}
         sx={{ bgcolor: '#989595', zIndex: 100 }}
       >
         Widget

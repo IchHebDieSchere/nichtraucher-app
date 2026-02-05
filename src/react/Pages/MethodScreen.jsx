@@ -61,7 +61,7 @@ const MethodScreen = () => {
       </FormControl>
 
       <Stack alignItems="center">
-        <Button disabled={!selectedMethod} variant="contained" onClick={() => navigate('/idk')}>
+        <Button disabled={!selectedMethod} variant="contained" onClick={() => navigate('/menu')}>
           Weiter
         </Button>
       </Stack>

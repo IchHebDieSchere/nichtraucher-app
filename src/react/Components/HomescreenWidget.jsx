@@ -53,7 +53,7 @@ const HomescreenWidget = () => {
               setIsPressed(false)
             }, 1000)
             setTimeout(() => {
-              navigate('/splashscreen')
+              navigate('/')
             }, 1000)
           }}
           sx={{
