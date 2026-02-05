@@ -1,20 +1,26 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Popover, Box, Stack, Button, Typography } from '@mui/material'
+import {
+  Popover,
+  Box,
+  Stack,
+  Button,
+  Typography
+} from '@mui/material'
 
 const PlacementScreen = () => {
   const [helpButton, setHelpButton] = useState(null)
   const navigate = useNavigate()
 
   const handleBack = () => {
-    navigate(-1)
+    navigate('/suggestion')
   }
   const handleDone = () => {
-    navigate(1)
+    navigate('/menu', { state: { showSuccess: true } })
   }
   const handleLater = () => {
-    navigate(1)
+    navigate('/menu', { state: { showReminder: true } })
   }
 
   return (
@@ -23,7 +29,8 @@ const PlacementScreen = () => {
       justifyContent="space-between"
       alignItems="center"
       spacing={3}
-      sx={{ px: 3, py: 3 }}
+      sx={{ px: 3, py: 3, position: 'relative'
+      }}
     >
       <Stack spacing={1} alignSelf="flex-start">
         <Button
@@ -41,7 +48,7 @@ const PlacementScreen = () => {
           entsperrst
         </Typography>
       </Stack>
-      <Box component="img" src="empty" alt="*insert GIF here*" />
+      <Box component="img" alt="*insert GIF here*" />
 
       <Button
         variant="outlined"
