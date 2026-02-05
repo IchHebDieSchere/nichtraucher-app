@@ -7,8 +7,20 @@ const SplashScreen = () => {
 
   useEffect(() => {
     const autoRedirectTimerId = setTimeout(() => {
-      navigate('/welcome')
-    }, 3000)
+      const method = localStorage.getItem('selectedMethod')
+
+      if (!method) {
+        navigate('/welcome')
+      } else if (method === 'game') {
+        navigate('/minigame')
+      } else if (method === 'breathing') {
+        navigate('/boxBreathing')
+      } else if (method === 'facts') {
+        navigate('/facts')
+      } else {
+        navigate('/error')
+      }
+    }, 1000)
 
     return () => {
       clearTimeout(autoRedirectTimerId)
