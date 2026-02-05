@@ -14,7 +14,9 @@ import WelcomeScreen from './Pages/WelcomeScreen'
 import MainMenu from './Pages/MainMenu/MainMenu'
 import MethodScreen from './Pages/MethodScreen'
 
-import Homescreen from './Pages/Homescreen'
+import HomeScreen from './Pages/HomeScreen'
+
+import PlacementScreen from './Pages/PlacementScreen'
 
 const AppRoutes = () => (
   <Routes>
@@ -28,7 +30,8 @@ const AppRoutes = () => (
     <Route path="/minigame" element={<Minigame />} />
     <Route path="/boxBreathing" element={<BoxBreathing />} />
     <Route path="*" element={<Error404 />} />
-    <Route path="/homescreen" element={<Homescreen />} />
+    <Route path="/homescreen" element={<HomeScreen />} />
+    <Route path="/placement" element={<PlacementScreen />} />
   </Routes>
 )
 
