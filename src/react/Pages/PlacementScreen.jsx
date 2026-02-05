@@ -6,30 +6,21 @@ import {
   Box,
   Stack,
   Button,
-  Typography,
-  Slide,
-  Alert
+  Typography
 } from '@mui/material'
 
 const PlacementScreen = () => {
   const [helpButton, setHelpButton] = useState(null)
-  const [isSlide, setSlide] = useState(false)
   const navigate = useNavigate()
 
   const handleBack = () => {
-    navigate(-1)
+    navigate('/suggestion')
   }
   const handleDone = () => {
-    setSlide(true)
-    setTimeout(() => {
-      setSlide(false)
-    }, 3000)
+    navigate('/menu', { state: { showSuccess: true } })
   }
   const handleLater = () => {
-    setSlide(true)
-    setTimeout(() => {
-      setSlide(false)
-    }, 3000)
+    navigate('/menu', { state: { showReminder: true } })
   }
 
   return (
@@ -38,24 +29,9 @@ const PlacementScreen = () => {
       justifyContent="space-between"
       alignItems="center"
       spacing={3}
-      sx={{ px: 3, py: 3, position: 'relative' }}
+      sx={{ px: 3, py: 3, position: 'relative'
+      }}
     >
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 20,
-          left: '50%',
-          zIndex: 1000,
-          transform: 'translate(-50%)',
-          width: '90%'
-        }}
-      >
-        <Slide direction="down" in={isSlide}>
-          <Alert severity="success" variant="filled" sx={{ borderRadius: 2 }}>
-            Good Job! Du hast dem Rauchdrang widerstanden!
-          </Alert>
-        </Slide>
-      </Box>
       <Stack spacing={1} alignSelf="flex-start">
         <Button
           onClick={handleBack}
