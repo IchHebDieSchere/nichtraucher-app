@@ -4,6 +4,11 @@ import { Stack, Box, Button, FormControlLabel, RadioGroup, Radio } from '@mui/ma
 import { useNavigate } from 'react-router'
 import useWidgetAdded from '../../../hooks/useWidgetAdded'
 
+//typography caption
+//flackern geht auch weg
+//button behalten
+//toggle anstelle von radio button
+
 const Methods = ({ selectedMethod, setSelectedMethod }) => {
   const { isWidgetAdded, markWidgetAdded } = useWidgetAdded()
   const routeTo = useNavigate()
@@ -28,9 +33,9 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
           value={selectedMethod}
           onChange={handleRadioChange}
         >
-          <FormControlLabel value="game" control={<Radio />} label="Minigame" />
+          <FormControlLabel value="game" control={<Radio />} label="Tetris" />
           <FormControlLabel value="breathing" control={<Radio />} label="Breathing Exercise" />
-          <FormControlLabel value="facts" control={<Radio />} label="Facts & Advantages" />
+          <FormControlLabel value="facts" control={<Radio />} label="Facts and Advantages" />
         </RadioGroup>
       </Box>
 

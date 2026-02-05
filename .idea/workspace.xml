@@ -6,10 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b2177a1a-a17f-455d-8cec-1f45112bacdd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hooks/useWidgetAdded.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/useWidgetAdded.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react/Pages/MainMenu/MainMenu.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/MainMenu/MainMenu.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

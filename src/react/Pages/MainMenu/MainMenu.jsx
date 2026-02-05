@@ -16,8 +16,8 @@ const MainMenu = () => {
   return (
     <Stack alignItems="center" spacing={6}>
       <ToggleButtonGroup value={tab} exclusive onChange={handleTabChange}>
-        <ToggleButton value="statistik">Statistik</ToggleButton>
-        <ToggleButton value="methoden">Methoden</ToggleButton>
+        <ToggleButton value="statistik">Statistics</ToggleButton>
+        <ToggleButton value="methoden">Methods</ToggleButton>
       </ToggleButtonGroup>
 
       {tab === 'statistik' && (
