@@ -2,7 +2,6 @@ import React from 'react'
 
 import { Stack, Box, Button, FormControlLabel, RadioGroup, Radio } from '@mui/material'
 import { useNavigate } from 'react-router'
-import useWidgetAdded from '../../../hooks/useWidgetAdded'
 
 //typography caption
 //flackern geht auch weg
@@ -10,7 +9,6 @@ import useWidgetAdded from '../../../hooks/useWidgetAdded'
 //toggle anstelle von radio button
 
 const Methods = ({ selectedMethod, setSelectedMethod }) => {
-  const { isWidgetAdded, markWidgetAdded } = useWidgetAdded()
   const routeTo = useNavigate()
 
   const handleRadioChange = (event) => {
@@ -39,18 +37,13 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
         </RadioGroup>
       </Box>
 
-      {!isWidgetAdded && (
-        <Button
-          variant="contained"
-          onClick={() => {
-            routeTo('/tutorial')
-            markWidgetAdded()
-          }}
-          sx={{ bgcolor: '#989595', zIndex: 100 }}
-        >
-          Widget
-        </Button>
-      )}
+      <Button
+        variant="contained"
+        onClick={() => routeTo('/tutorial')}
+        sx={{ bgcolor: '#989595', zIndex: 100 }}
+      >
+        Widget
+      </Button>
 
       <Button
         variant="contained"
