@@ -15,6 +15,7 @@ import Error404 from './Pages/Error404'
 import Minigame from './Pages/Minigame/Minigame'
 import SplashScreen from './Pages/SplashScreen'
 import WelcomeScreen from './Pages/WelcomeScreen'
+import MainMenu from './Pages/MainMenu/MainMenu'
 import MethodScreen from './Pages/MethodScreen'
 
 import Homescreen from './Pages/Homescreen'
@@ -31,6 +32,7 @@ const AppRoutes = () => (
       <Route path="settings" element={<ProfileSettings />} />
     </Route>
     <Route path="/catnames" element={<CatNames />} />
+    <Route path="/menu" element={<MainMenu />} />
     <Route path="/facts" element={<Facts />} />
     <Route path="/minigame" element={<Minigame />} />
     <Route path="/boxBreathing" element={<BoxBreathing />} />
