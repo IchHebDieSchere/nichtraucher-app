@@ -1,21 +1,13 @@
 import React from 'react'
 
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import {
   Stack,
   Typography,
   Container,
-  Paper,
-  BottomNavigation,
-  BottomNavigationAction
+  Paper
 } from '@mui/material'
-
-import {
-  HealthAndSafety as HomeIcon,
-  Pets as CatIcon,
-  Person4 as ProfileIcon
-} from '@mui/icons-material'
 
 import AppRoutes from './AppRoutes'
 
@@ -25,12 +17,6 @@ const borderRadius = 6
 
 const AppLayout = () => {
   const location = useLocation()
-  const navigate = useNavigate()
-
-  let navigationIndex = 0
-  if (location.pathname.startsWith('/catnames')) navigationIndex = 1
-  if (location.pathname.startsWith('/profile')) navigationIndex = 2
-
   return (
     <Stack
       direction="row"
@@ -100,29 +86,7 @@ const AppLayout = () => {
             }}
           >
             <AppRoutes />
-            {location.pathname.startsWith('/homescreen') ? null : (
-              <BottomNavigation
-                showLabels
-                value={navigationIndex}
-                sx={{ width: '100%' }}
-              >
-                <BottomNavigationAction
-                  label="Home"
-                  icon={<HomeIcon />}
-                  onClick={() => navigate('/')}
-                />
-                <BottomNavigationAction
-                  label="Cat Names"
-                  icon={<CatIcon />}
-                  onClick={() => navigate('/catnames')}
-                />
-                <BottomNavigationAction
-                  label="Profile"
-                  icon={<ProfileIcon />}
-                  onClick={() => navigate('/profile')}
-                />
-              </BottomNavigation>
-            )}
+            {location.pathname.startsWith('/homescreen') }
           </Stack>
         </Paper>
       </Container>
