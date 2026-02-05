@@ -5,7 +5,7 @@ import { Stack, Avatar, Typography } from '@mui/material'
 const color = ['red', 'orange', 'yellow', 'green', 'blue', 'violet', 'purple']
 
 // eslint-disable-next-line react/prop-types
-const HomescreenButton = ({ label = '!missing' }) => (
+const HomeScreenButton = ({ label = '!missing' }) => (
   <Stack justifyContent="center" alignItems="center">
     <Avatar sx={{ bgcolor: color[Math.floor(Math.random() * color.length)] }}>
       {label[0]}
@@ -14,4 +14,4 @@ const HomescreenButton = ({ label = '!missing' }) => (
   </Stack>
 )
 
-export default HomescreenButton
+export default HomeScreenButton
