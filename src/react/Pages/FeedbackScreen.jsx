@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Stack, Typography } from '@mui/material'
+import { Stack, Typography, IconButton, Button } from '@mui/material'
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied'
 import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral'
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied'
@@ -10,16 +10,12 @@ const FeedbackScreen = () => {
   const [mood, setMood] = useState('')
 
   const handleNextClick = () => {
-    if (!mood) {
-      return
-    }
-
     if (mood === 'bad') {
       navigate('/method')
     } else if (mood === 'ok') {
       navigate('/suggestion')
     } else if (mood === 'good') {
-      navigate('/noidea')
+      navigate('/menu')
     }
   }
 
@@ -28,32 +24,45 @@ const FeedbackScreen = () => {
   const goodSize = mood === 'good' ? 90 : 64
 
   return (
-    <Stack flex="1 1 auto" justifyContent="center" alignItems="center" padding={2}>
+    <Stack
+      flexGrow={1}
+      flexShrink={1}
+      flexBasis="auto"
+      justifyContent="center"
+      alignItems="center"
+      p={2}
+    >
 
-      <Typography variant="h5" align="center" sx={{ marginTop: 6 }}>Wie hilfreich war das für dich?</Typography>
+      <Typography variant="h5" align="center" sx={{ marginTop: 6 }}>
+        Wie hilfreich war das für dich?
+      </Typography>
 
       {!mood && (
-      <Typography variant="body2" align="center" sx={{ marginTop: 2 }}>Bitte wähle eine Option aus.</Typography>
+        <Typography variant="body2" align="center" sx={{ marginTop: 2 }} color="error">
+          Bitte wähle eine Option aus.
+        </Typography>
       )}
 
       <Stack direction="row" spacing={5} sx={{ marginTop: 4 }}>
 
-        <button type="button" onClick={() => setMood('bad')} style={{ background: 'none', border: 'none' }}>
-          <SentimentVeryDissatisfiedIcon sx={{ fontSize: badSize, color: '#e53935' }} />
-        </button>
+        <IconButton onClick={() => setMood('bad')}>
+          <SentimentVeryDissatisfiedIcon sx={{ fontSize: badSize, color: 'red' }} />
+        </IconButton>
 
-        <button type="button" onClick={() => setMood('ok')} style={{ background: 'none', border: 'none' }}>
-          <SentimentNeutralIcon sx={{ fontSize: okSize, color: '#fbc02d' }} />
-        </button>
+        <IconButton onClick={() => setMood('ok')}>
+          <SentimentNeutralIcon sx={{ fontSize: okSize, color: 'warning.light' }} />
+        </IconButton>
 
-        <button type="button" onClick={() => setMood('good')} style={{ background: 'none', border: 'none' }}>
-          <SentimentVerySatisfiedIcon sx={{ fontSize: goodSize, color: '#43a047' }} />
-        </button>
+        <IconButton onClick={() => setMood('good')}>
+          <SentimentVerySatisfiedIcon sx={{ fontSize: goodSize, color: 'green' }} />
+        </IconButton>
 
       </Stack>
 
-      <Stack alignItems="center" spacing={1} marginBottom={6}>
-        <button type="button" disabled={!mood} onClick={handleNextClick} style={{ marginTop: 60 }}> Weiter </button>
+      <Stack alignItems="center" spacing={1} marginBottom={6} marginTop={4}>
+        <Button variant="contained" disabled={!mood} onClick={handleNextClick}>
+          Weiter
+        </Button>
       </Stack>
     </Stack>
 

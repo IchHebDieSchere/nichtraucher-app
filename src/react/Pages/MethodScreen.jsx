@@ -1,6 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Stack } from '@mui/material'
+import {
+  Stack,
+  Button,
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormLabel
+} from '@mui/material'
 
 const STORAGE_KEY = 'selectedMethod'
 
@@ -22,37 +30,41 @@ const MethodScreen = () => {
   }
 
   return (
-    <Stack flex="1 1 auto" justifyContent="space-between" padding={2}>
-
+    <Stack flexGrow={1} justifyContent="space-between" p={2}>
       <Stack alignItems="flex-start" marginTop={2} marginLeft={2}>
-        <button type="button" onClick={() => navigate(-1)}>Zurück</button>
+        <Button variant="contained" onClick={() => navigate(-1)}>
+          Zurück
+        </Button>
       </Stack>
 
-      <Stack spacing={2}>
-        <p>Mit welcher Methode können wir dich am besten unterstützen?</p>
-      </Stack>
-
-      <Stack spacing={1}>
-        <label htmlFor="method-game">
-          <input type="radio" id="method-game" name="method" value="game" checked={selectedMethod === 'game'} onChange={handleRadioChange} />
-          Methode: Spiel, z.B. Tetris
-        </label>
-
-        <label htmlFor="method-facts">
-          <input type="radio" id="method-facts" name="method" value="facts" checked={selectedMethod === 'facts'} onChange={handleRadioChange} />
-          Methode: Fakten über Craving und Vorteile des Durchhaltens
-        </label>
-
-        <label htmlFor="method-breathing">
-          <input type="radio" id="method-breathing" name="method" value="breathing" checked={selectedMethod === 'breathing'} onChange={handleRadioChange} />
-          Methode: Atem-/Dehnübung
-        </label>
-      </Stack>
+      <FormControl>
+        <FormLabel sx={{ mb: 5 }}>
+          Mit welcher Methode können wir dich am besten unterstützen?
+        </FormLabel>
+        <RadioGroup value={selectedMethod} onChange={handleRadioChange}>
+          <FormControlLabel
+            value="game"
+            control={<Radio />}
+            label="Methode: Spiel, z.B. Tetris"
+          />
+          <FormControlLabel
+            value="facts"
+            control={<Radio />}
+            label="Methode: Fakten über Craving und Vorteile des Durchhaltens"
+          />
+          <FormControlLabel
+            value="breathing"
+            control={<Radio />}
+            label="Methode: Atem-/Dehnübung"
+          />
+        </RadioGroup>
+      </FormControl>
 
       <Stack alignItems="center">
-        <button type="button" onClick={() => navigate('/idk')}>Weiter</button>
+        <Button disabled={!selectedMethod} variant="contained" onClick={() => navigate('/menu')}>
+          Weiter
+        </Button>
       </Stack>
-
     </Stack>
   )
 }
