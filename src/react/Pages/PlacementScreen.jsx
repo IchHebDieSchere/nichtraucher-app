@@ -1,10 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Popover, Box, Stack, Button, Typography } from '@mui/material'
+import { Box, Stack, Button, Typography } from '@mui/material'
 
 const PlacementScreen = () => {
-  const [helpButton, setHelpButton] = useState(null)
   const navigate = useNavigate()
 
   const handleBack = () => {
@@ -43,26 +42,11 @@ const PlacementScreen = () => {
       </Stack>
       <Box component="img" src="empty" alt="*insert GIF here*" />
 
-      <Button
-        variant="outlined"
-        onClick={(clickEvent) => setHelpButton(clickEvent.currentTarget)}
-      >
-        Widget Hilfe
-      </Button>
-
-      <Popover
-        open={Boolean(helpButton)}
-        anchorEl={helpButton}
-        onClose={() => setHelpButton(null)}
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
-        transformOrigin={{ vertical: 'bottom', horizontal: 'center' }}
-      >
-        <Box sx={{ p: 2 }}>
-          <Typography>Schritt 1: Startbildschirm gedrückt halten</Typography>
-          <Typography>Schritt 2: "Widgets" auswählen</Typography>
-          <Typography>Schritt 3: Widget finden und platzieren</Typography>
-        </Box>
-      </Popover>
+      <Box sx={{ p: 2 }}>
+        <Typography>Schritt 1: Startbildschirm gedrückt halten</Typography>
+        <Typography>Schritt 2: "Widgets" auswählen</Typography>
+        <Typography>Schritt 3: Widget finden und platzieren</Typography>
+      </Box>
 
       <Stack alignSelf="flex-end" spacing={2}>
         <Button onClick={handleDone} variant="contained" fullWidth>
