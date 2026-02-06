@@ -8,13 +8,13 @@ const PlacementScreen = () => {
   const navigate = useNavigate()
 
   const handleBack = () => {
-    navigate(-1)
+    navigate('/menu')
   }
   const handleDone = () => {
-    navigate(1)
+    navigate('/menu')
   }
   const handleLater = () => {
-    navigate(1)
+    navigate('/menu')
   }
 
   return (
