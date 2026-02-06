@@ -24,7 +24,7 @@ const AppRoutes = () => (
     <Route path="/" element={<SplashScreen />} />
     <Route path="/feedback" element={<FeedbackScreen />} />
     <Route path="/welcome" element={<WelcomeScreen />} />
-    <Route path="/method" element={<MethodScreen />} />
+    <Route path="/method/:mood?" element={<MethodScreen />} />
     <Route path="/menu" element={<MainMenu />} />
     <Route path="/facts" element={<Facts />} />
     <Route path="/minigame" element={<Minigame />} />

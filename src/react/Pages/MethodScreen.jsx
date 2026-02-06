@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import {
   Stack,
   Button,
@@ -15,6 +15,8 @@ const STORAGE_KEY = 'selectedMethod'
 const MethodScreen = () => {
   const navigate = useNavigate()
 
+  const { mood } = useParams()
+
   const [selectedMethod, setSelectedMethod] = useState('')
 
   useEffect(() => {
@@ -27,6 +29,26 @@ const MethodScreen = () => {
   const handleRadioChange = (event) => {
     setSelectedMethod(event.target.value)
     localStorage.setItem(STORAGE_KEY, event.target.value)
+  }
+
+  const onClickHandle = () => {
+    let nextRoute = '/placement'
+
+    if (mood === 'bad') {
+      if (selectedMethod === 'game') {
+        nextRoute = '/minigame'
+      } else if (selectedMethod === 'facts') {
+        nextRoute = '/facts'
+      } else if (selectedMethod === 'breathing') {
+        nextRoute = '/boxBreathing'
+      }
+    }
+
+    if (mood === 'ok') {
+      nextRoute = '/menu'
+    }
+
+    navigate(nextRoute)
   }
 
   return (
@@ -61,7 +83,7 @@ const MethodScreen = () => {
       </FormControl>
 
       <Stack alignItems="center">
-        <Button disabled={!selectedMethod} variant="contained" onClick={() => navigate('/menu')}>
+        <Button disabled={!selectedMethod} variant="contained" onClick={onClickHandle}>
           Weiter
         </Button>
       </Stack>
