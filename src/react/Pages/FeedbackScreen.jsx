@@ -11,7 +11,7 @@ const FeedbackScreen = () => {
 
   const handleNextClick = () => {
     if (mood === 'bad') {
-      navigate('/method')
+      navigate('/method/bad')
     } else if (mood === 'ok') {
       navigate('/suggestion')
     } else if (mood === 'good') {

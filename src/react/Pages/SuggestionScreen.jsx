@@ -17,7 +17,7 @@ const SuggestionScreen = () => {
       </Stack>
 
       <Stack direction="row" justifyContent="center" spacing={6} marginBottom={20}>
-        <button type="button" onClick={() => navigate('/method')}>Ja</button>
+        <button type="button" onClick={() => navigate('/method/ok')}>Ja</button>
         <button type="button" onClick={() => navigate('/menu')}>Nein</button>
       </Stack>
 
