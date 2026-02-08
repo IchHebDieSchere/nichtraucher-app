@@ -10,7 +10,7 @@ const Statistics = ({ stats }) => {
   // Bewertungen
 
   return (
-    <Stack alignItems="center" justifyContent="center" spacing={1}>
+    <Stack alignItems="center" justifyContent="center" spacing={2}>
       <Box
         sx={{
           width: 360,
