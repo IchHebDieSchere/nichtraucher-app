@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useLocation } from 'react-router-dom'
+import {useLocation} from 'react-router-dom'
 
 import {
     Stack,
@@ -85,8 +85,8 @@ const AppLayout = () => {
                             background: theme => theme.palette.background.paper
                         }}
                     >
-                        <AppRoutes />
-                        {location.pathname.startsWith('/homescreen') }
+                        <AppRoutes/>
+                        {location.pathname.startsWith('/homescreen')}
                     </Stack>
                 </Paper>
             </Container>
