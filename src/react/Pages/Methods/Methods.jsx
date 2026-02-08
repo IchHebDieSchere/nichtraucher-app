@@ -3,10 +3,11 @@ import React from 'react'
 import { Stack, Box, Button, ToggleButtonGroup, ToggleButton } from '@mui/material'
 import { useNavigate } from 'react-router'
 
-//typography caption
-//flackern geht auch weg
-//button behalten
-//toggle anstelle von radio button
+const emergencyRoutes = {
+  game: '/minigame',
+  breathing: '/boxBreathing',
+  facts: '/facts'
+}
 
 const Methods = ({ selectedMethod, setSelectedMethod }) => {
   const routeTo = useNavigate()
@@ -46,6 +47,9 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
             '& .MuiToggleButton-root.Mui-selected': {
               bgcolor: '#1769aa',
               color: 'primary.contrastText'
+            },
+            '& .MuiToggleButton-root.Mui-selected:hover': {
+              bgcolor: 'primary.dark'
             }
           }}
         >
@@ -65,7 +69,7 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/tutorial')}
+        onClick={() => routeTo('/placement')}
         sx={{ bgcolor: '#989595', zIndex: 100 }}
       >
         Widget
@@ -73,7 +77,11 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/boxBreathing')}
+        onClick={() => {
+          if (selectedMethod) {
+            routeTo(emergencyRoutes[selectedMethod])
+          }
+        }}
         sx={{ bgcolor: '#fc0303', color: '#fff', zIndex: 99 }}
       >
         Emergency

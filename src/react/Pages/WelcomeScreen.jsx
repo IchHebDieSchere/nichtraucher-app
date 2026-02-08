@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Stack } from '@mui/material'
+import { Stack, Typography, TextField, Button } from '@mui/material'
 
 const STORAGE_KEY = 'userName'
 
@@ -8,11 +8,14 @@ const WelcomeScreen = () => {
   const navigate = useNavigate()
   const [name, setName] = useState('')
 
-  const handleNextClick = () => {
-    if (!name) {
-      return
+  useEffect(() => {
+    const savedValue = localStorage.getItem(STORAGE_KEY)
+    if (savedValue) {
+      setName(savedValue)
     }
+  }, [])
 
+  const handleNextClick = () => {
     localStorage.setItem(STORAGE_KEY, name)
     navigate('/method')
   }
@@ -23,24 +26,31 @@ const WelcomeScreen = () => {
   }
 
   return (
-    <Stack flex="1 1 auto" justifyContent="center" alignItems="center" padding={2}>
+    <Stack
+      flexGrow={1}
+      flexShrink={1}
+      flexBasis="auto"
+      justifyContent="center"
+      alignItems="center"
+      p={2}
+    >
 
       <Stack spacing={3} alignItems="center">
-        <h2>Willkommen!</h2>
+        <Typography variant="h2">Willkommen!</Typography>
 
-        <p style={{ textAlign: 'center' }}>
+        <Typography textAlign="center">
           Unser Notfall-Button hilft dir dabei in Momenten des Rauchverlangens diese zu unterdrücken
-        </p>
+        </Typography>
 
-        <p>Wie dürfen wir dich nennen?</p>
+        <Typography>Wie dürfen wir dich nennen?</Typography>
 
         {!name && (
-          <p>Bitte gib deinen Namen ein, um fortzufahren.</p>
+          <Typography color="red">Bitte gib deinen Namen ein, um fortzufahren.</Typography>
         )}
 
-        <input value={name} onChange={handleOnChange} placeholder="Name" />
+        <TextField value={name} onChange={handleOnChange} label="Name" variant="outlined" />
 
-        <button type="button" disabled={!name} onClick={handleNextClick}>Weiter</button>
+        <Button variant="contained" disabled={!name} onClick={handleNextClick}>Weiter</Button>
       </Stack>
     </Stack>
   )

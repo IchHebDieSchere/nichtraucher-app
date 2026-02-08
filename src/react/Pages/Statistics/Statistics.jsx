@@ -6,9 +6,6 @@ import { useNavigate } from 'react-router'
 const Statistics = ({ stats }) => {
   const routeTo = useNavigate()
 
-  // Welche Methode wurde wie häufig benutzt?
-  // Bewertungen
-
   return (
     <Stack alignItems="center" justifyContent="center" spacing={2}>
       <Box
@@ -27,7 +24,7 @@ const Statistics = ({ stats }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/tutorial')}
+        onClick={() => routeTo('/placement')}
         sx={{ bgcolor: '#989595', zIndex: 100 }}
       >
         Widget

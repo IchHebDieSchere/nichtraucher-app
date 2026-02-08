@@ -18,7 +18,7 @@
     "start:dev": "cd build && ws --spa index.html",
     "build": "yarn clean && yarn webpack",
     "watch": "yarn clean && yarn webpack:dev  --watch",
-    "clean": "rimraf -rf build && mkdirp build",
+    "clean": "rm -rf build && mkdirp build",
     "webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode production --progress",
     "webpack:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --mode development --devtool eval-source-map --progress",
     "deploy": "yarn build && firebase deploy",
@@ -72,12 +72,10 @@
     "mini-css-extract-plugin": "^2.6.1",
     "mkdirp": "^1.0.4",
     "raw-loader": "^4.0.2",
-    "rimraf": "^6.1.2",
     "wait-cli": "^1.0.0",
     "watch": "^1.0.1",
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^5.2.2"
+    "webpack-cli": "^4.10.0"
   },
   "dependencies": {
     "@apollo/client": "3.11.4",
@@ -104,7 +102,6 @@
     "react-router": "^6.26.1",
     "react-router-dom": "^6.26.1",
     "react-transition-group": "^4.4.5",
-    "src": "^1.1.2",
     "stream-browserify": "^3.0.0"
   }
 }

@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b2177a1a-a17f-455d-8cec-1f45112bacdd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Methods/Methods.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/react/Pages/Statistics/Statistics.jsx" afterDir="false" />
-    </list>
+    <list default="true" id="b2177a1a-a17f-455d-8cec-1f45112bacdd" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,7 +54,6 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;I5__StatsMethodsLogic&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
@@ -92,7 +87,7 @@
       <workItem from="1768503040645" duration="575000" />
       <workItem from="1768554749406" duration="2572000" />
       <workItem from="1769161525306" duration="6786000" />
-      <workItem from="1770564663713" duration="1643000" />
+      <workItem from="1770564663713" duration="2339000" />
     </task>
     <servers />
   </component>
