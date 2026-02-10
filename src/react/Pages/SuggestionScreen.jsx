@@ -9,11 +9,11 @@ const SuggestionScreen = () => {
     <Stack flex="1 1 auto" justifyContent="space-between" padding={2}>
 
       <Stack alignItems="center" flex="1" justifyContent="center">
-        <Typography variant="h6" align="center">
+        <Typography align="center">
           Möchtest du beim nächsten Mal eine andere Methode ausprobieren?
         </Typography>
 
-        <Stack direction="row" width="100%" justifyContent="space-between" px={4} paddingTop={5}>
+        <Stack direction="row" width="100%" justifyContent="space-between" px={4} paddingTop={3}>
           <Button variant="outlined" onClick={() => { navigate(-1) }}> Zurück</Button>
           <Stack direction="row" spacing={2}>
             <Button variant="contained" onClick={() => navigate('/method/ok')}>Ja</Button>

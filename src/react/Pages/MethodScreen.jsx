@@ -52,12 +52,16 @@ const MethodScreen = () => {
   }
 
   return (
-    <Stack flexGrow={1} justifyContent="space-between" mt={30} p={2}>
+    <Stack justifyContent="space-between" p={2}>
       <FormControl>
-        <FormLabel sx={{ mb: 5 }}>
+        <FormLabel sx={{ mb: 2, textAlign: 'center' }}>
           Mit welcher Methode können wir dich am besten unterstützen?
         </FormLabel>
-        <RadioGroup value={selectedMethod} onChange={handleRadioChange}>
+        <RadioGroup
+          sx={{ margin: '0 16px ' }}
+          value={selectedMethod}
+          onChange={handleRadioChange}
+        >
           <FormControlLabel
             value="game"
             control={<Radio />}
@@ -76,7 +80,7 @@ const MethodScreen = () => {
         </RadioGroup>
       </FormControl>
 
-      <Stack direction="row" justifyContent="flex-end" spacing={2} mb={32}>
+      <Stack direction="row" justifyContent="flex-end" spacing={2} marginTop={3}>
         <Button variant="outlined" onClick={() => navigate(-1)}>
           Zurück
         </Button>
