@@ -55,7 +55,7 @@ const MethodScreen = () => {
     <Stack justifyContent="space-between" p={2}>
       <FormControl>
         <FormLabel sx={{ mb: 2, textAlign: 'center' }}>
-          Mit welcher Methode können wir dich am besten unterstützen?
+          How would you like us to support you?
         </FormLabel>
         <RadioGroup
           sx={{ margin: '0 16px ' }}
@@ -65,27 +65,27 @@ const MethodScreen = () => {
           <FormControlLabel
             value="game"
             control={<Radio />}
-            label="Methode: Spiel, z.B. Tetris"
+            label="Play a game (e.g., Tetris)"
           />
           <FormControlLabel
             value="facts"
             control={<Radio />}
-            label="Methode: Fakten über Craving und Vorteile des Durchhaltens"
+            label="Learn about cravings and the benefits of staying smoke-free"
           />
           <FormControlLabel
             value="breathing"
             control={<Radio />}
-            label="Methode: Atem-/Dehnübung"
+            label="Try a breathing or stretching exercise"
           />
         </RadioGroup>
       </FormControl>
 
       <Stack direction="row" justifyContent="flex-end" spacing={2} marginTop={3}>
         <Button variant="outlined" onClick={() => navigate(-1)}>
-          Zurück
+          Back
         </Button>
         <Button disabled={!selectedMethod} variant="contained" onClick={onClickHandle}>
-          Weiter
+          Continue
         </Button>
       </Stack>
     </Stack>

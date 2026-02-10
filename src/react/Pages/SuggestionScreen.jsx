@@ -10,14 +10,14 @@ const SuggestionScreen = () => {
 
       <Stack alignItems="center" flex="1" justifyContent="center">
         <Typography align="center">
-          Möchtest du beim nächsten Mal eine andere Methode ausprobieren?
+          Would you like to try another method next time?
         </Typography>
 
         <Stack direction="row" width="100%" justifyContent="space-between" px={4} paddingTop={3}>
-          <Button variant="outlined" onClick={() => { navigate(-1) }}> Zurück</Button>
+          <Button variant="outlined" onClick={() => { navigate(-1) }}>Back</Button>
           <Stack direction="row" spacing={2}>
-            <Button variant="contained" onClick={() => navigate('/method/ok')}>Ja</Button>
-            <Button variant="contained" onClick={() => navigate('/menu')}>Nein</Button>
+            <Button variant="contained" onClick={() => navigate('/method/ok')}>Yes</Button>
+            <Button variant="contained" onClick={() => navigate('/menu')}>No</Button>
           </Stack>
         </Stack>
       </Stack>

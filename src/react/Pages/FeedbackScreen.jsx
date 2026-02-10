@@ -35,11 +35,11 @@ const FeedbackScreen = () => {
     >
 
       <Typography variant="h5" align="center">
-        Wie hilfreich war das für dich?
+        How helpful was this for you?
       </Typography>
 
       <Typography align="center" sx={{ marginTop: 2 }}>
-        Bitte wähle eine Option aus.
+        Please choose an option.
       </Typography>
 
       <Stack width="100%" direction="row" justifyContent="space-between" px={2} sx={{ marginTop: 3 }}>
@@ -92,7 +92,7 @@ const FeedbackScreen = () => {
       <Stack sx={{ height: '90px' }} alignItems="center" marginTop={3}>
         {!!mood &&
         <Button variant="contained" onClick={handleNextClick}>
-          Weiter
+          Continue
         </Button>}
       </Stack>
     </Stack>

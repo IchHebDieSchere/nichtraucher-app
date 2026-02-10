@@ -36,18 +36,18 @@ const WelcomeScreen = () => {
     >
 
       <Stack alignItems="center">
-        <Typography variant="h3" marginBottom={2}>Willkommen!</Typography>
+        <Typography variant="h3" marginBottom={2}>Welcome!</Typography>
         <Typography textAlign="center" marginBottom={4}>
-          Unser Notfall-Button hilft dir dabei in Momenten des Rauchverlangens diese zu unterdrücken
+          Our emergency button helps you cope with moments of cigarette cravings
         </Typography>
 
         <Stack alignItems="center">
-          <Typography>Wie dürfen wir dich nennen?</Typography>
-          <Typography>Bitte gib deinen Namen ein, um fortzufahren.</Typography>
+          <Typography>What should we call you?</Typography>
+          <Typography>Please enter your name to continue.</Typography>
         </Stack>
 
         <TextField sx={{ marginTop: '24px' }} value={name} onChange={handleOnChange} label="Name*" variant="outlined" />
-        <Button sx={{ marginTop: '24px' }} variant="contained" disabled={!name} onClick={handleNextClick}>Weiter</Button>
+        <Button sx={{ marginTop: '24px' }} variant="contained" disabled={!name} onClick={handleNextClick}>Continue</Button>
       </Stack>
     </Stack>
   )
