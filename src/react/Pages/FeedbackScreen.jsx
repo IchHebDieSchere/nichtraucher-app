@@ -53,17 +53,17 @@ const FeedbackScreen = () => {
           <SentimentNeutralIcon sx={{ fontSize: okSize, color: 'warning.light' }} />
         </IconButton>
 
-        <IconButton onClick={() => setMood('good')}>
+        <IconButton onClick={() => navigate('/menu')}>
           <SentimentVerySatisfiedIcon sx={{ fontSize: goodSize, color: 'green' }} />
         </IconButton>
 
       </Stack>
-
+      {!!mood &&
       <Stack alignItems="center" spacing={1} marginBottom={6} marginTop={4}>
         <Button variant="contained" disabled={!mood} onClick={handleNextClick}>
           Weiter
         </Button>
-      </Stack>
+      </Stack>}
     </Stack>
 
   )

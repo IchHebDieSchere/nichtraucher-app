@@ -52,13 +52,7 @@ const MethodScreen = () => {
   }
 
   return (
-    <Stack flexGrow={1} justifyContent="space-between" p={2}>
-      <Stack alignItems="flex-start" marginTop={2} marginLeft={2}>
-        <Button variant="contained" onClick={() => navigate(-1)}>
-          Zurück
-        </Button>
-      </Stack>
-
+    <Stack flexGrow={1} justifyContent="space-between" mt={30} p={2}>
       <FormControl>
         <FormLabel sx={{ mb: 5 }}>
           Mit welcher Methode können wir dich am besten unterstützen?
@@ -82,7 +76,10 @@ const MethodScreen = () => {
         </RadioGroup>
       </FormControl>
 
-      <Stack alignItems="center">
+      <Stack direction="row" justifyContent="flex-end" spacing={2} mb={32}>
+        <Button variant="outlined" onClick={() => navigate(-1)}>
+          Zurück
+        </Button>
         <Button disabled={!selectedMethod} variant="contained" onClick={onClickHandle}>
           Weiter
         </Button>
