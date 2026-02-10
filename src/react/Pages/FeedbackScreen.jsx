@@ -38,38 +38,63 @@ const FeedbackScreen = () => {
         Wie hilfreich war das für dich?
       </Typography>
 
-      {!mood && (
-        <Typography variant="body2" align="center" sx={{ marginTop: 2 }} color="error">
-          Bitte wähle eine Option aus.
-        </Typography>
-      )}
+      <Typography variant="body2" align="center" sx={{ marginTop: 2 }}>
+        Bitte wähle eine Option aus.
+      </Typography>
 
-      <Stack width="100%" direction="row" justifyContent="space-between" px={2} sx={{ marginTop: 4 }}>
-        <Box width="106px" alignItems="center" justifyContent="center" sx={{ display: 'flex' }}>
+      <Stack width="100%" direction="row" justifyContent="space-between" px={2} sx={{ marginTop: 3 }}>
+        <Box
+          alignItems="center"
+          justifyContent="center"
+          sx={{
+            display: 'flex',
+            width: '106px',
+            height: '106px'
+          }}
+        >
           <IconButton onClick={() => setMood('bad')}>
             <SentimentVeryDissatisfiedIcon sx={{ fontSize: badSize, color: 'red' }} />
           </IconButton>
         </Box>
 
-        <Box width="106px" alignItems="center" justifyContent="center" sx={{ display: 'flex' }}>
+        <Box
+          width="106px"
+          alignItems="center"
+          justifyContent="center"
+          sx={{
+            display: 'flex',
+            width: '106px',
+            height: '106px'
+          }}
+        >
           <IconButton onClick={() => setMood('ok')}>
             <SentimentNeutralIcon sx={{ fontSize: okSize, color: 'warning.light' }} />
           </IconButton>
         </Box>
 
-        <Box width="106px" alignItems="center" justifyContent="center" sx={{ display: 'flex' }}>
+        <Box
+          width="106px"
+          alignItems="center"
+          justifyContent="center"
+          sx={{
+            display: 'flex',
+            width: '106px',
+            height: '106px'
+          }}
+        >
           <IconButton onClick={() => navigate('/menu')}>
             <SentimentVerySatisfiedIcon sx={{ fontSize: goodSize, color: 'green' }} />
           </IconButton>
         </Box>
 
       </Stack>
-      {!!mood &&
-      <Stack alignItems="center" spacing={1} marginBottom={6} marginTop={4}>
-        <Button variant="contained" disabled={!mood} onClick={handleNextClick}>
+
+      <Stack sx={{ height: '90px' }} alignItems="center" marginBottom={6} marginTop={4}>
+        {!!mood &&
+        <Button variant="contained" onClick={handleNextClick}>
           Weiter
-        </Button>
-      </Stack>}
+        </Button>}
+      </Stack>
     </Stack>
 
   )

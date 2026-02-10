@@ -44,9 +44,7 @@ const WelcomeScreen = () => {
 
         <Typography>Wie dürfen wir dich nennen?</Typography>
 
-        {!name && (
-          <Typography color="red">Bitte gib deinen Namen ein, um fortzufahren.</Typography>
-        )}
+        <Typography>Bitte gib deinen Namen ein, um fortzufahren.</Typography>
 
         <TextField value={name} onChange={handleOnChange} label="Name" variant="outlined" />
 
