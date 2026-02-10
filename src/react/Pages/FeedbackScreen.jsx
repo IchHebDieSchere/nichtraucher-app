@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Stack, Typography, IconButton, Button } from '@mui/material'
+import { Stack, Typography, IconButton, Button, Box } from '@mui/material'
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied'
 import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral'
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied'
@@ -31,6 +31,7 @@ const FeedbackScreen = () => {
       justifyContent="center"
       alignItems="center"
       p={2}
+      width="100%"
     >
 
       <Typography variant="h5" align="center" sx={{ marginTop: 6 }}>
@@ -43,19 +44,24 @@ const FeedbackScreen = () => {
         </Typography>
       )}
 
-      <Stack direction="row" spacing={5} sx={{ marginTop: 4 }}>
+      <Stack width="100%" direction="row" justifyContent="space-between" px={2} sx={{ marginTop: 4 }}>
+        <Box width="106px" alignItems="center" justifyContent="center" sx={{ display: 'flex' }}>
+          <IconButton onClick={() => setMood('bad')}>
+            <SentimentVeryDissatisfiedIcon sx={{ fontSize: badSize, color: 'red' }} />
+          </IconButton>
+        </Box>
 
-        <IconButton onClick={() => setMood('bad')}>
-          <SentimentVeryDissatisfiedIcon sx={{ fontSize: badSize, color: 'red' }} />
-        </IconButton>
+        <Box width="106px" alignItems="center" justifyContent="center" sx={{ display: 'flex' }}>
+          <IconButton onClick={() => setMood('ok')}>
+            <SentimentNeutralIcon sx={{ fontSize: okSize, color: 'warning.light' }} />
+          </IconButton>
+        </Box>
 
-        <IconButton onClick={() => setMood('ok')}>
-          <SentimentNeutralIcon sx={{ fontSize: okSize, color: 'warning.light' }} />
-        </IconButton>
-
-        <IconButton onClick={() => navigate('/menu')}>
-          <SentimentVerySatisfiedIcon sx={{ fontSize: goodSize, color: 'green' }} />
-        </IconButton>
+        <Box width="106px" alignItems="center" justifyContent="center" sx={{ display: 'flex' }}>
+          <IconButton onClick={() => navigate('/menu')}>
+            <SentimentVerySatisfiedIcon sx={{ fontSize: goodSize, color: 'green' }} />
+          </IconButton>
+        </Box>
 
       </Stack>
       {!!mood &&
