@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { Stack, Button } from '@mui/material'
+import { Stack, Button, Card, CardContent, CardActions, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import SmokeFreeIcon from '@mui/icons-material/SmokeFree'
 
 /**
  * Used for filtering out used Elements in an Array: https://react.dev/learn/updating-arrays-in-state
@@ -10,9 +11,11 @@ import { useNavigate } from 'react-router-dom'
 const allFacts = [
   { id: 0, fact: 'Tobacco kills up to half of its users who don’t quit' },
   { id: 1, fact: 'Tobacco kills more than 7 million people each year, including an estimated 1.6 million non-smokers who are exposed to second-hand smoke' },
-  { id: 2, fact: 'random fact 3' },
-  { id: 3, fact: 'random fact 4' },
-  { id: 4, fact: 'random fact 5' }
+  { id: 2, fact: 'Smokers are about twice as likely to die from cancer as non-smokers' },
+  { id: 3, fact: 'Smokers are about three times as likely to die from heart attack as non-smokers.' },
+  { id: 4, fact: 'One-half of heavy smokers (25 cigarettes or more per day) will die of diseases caused by their smoking.' },
+  { id: 5, fact: 'More than 2,500 deaths of infants under one year of age are attributable to smoking by mothers.' },
+  { id: 6, fact: 'Among men aged 40-50, deaths from heart disease are nine times more common in smokers that in non-smokers.' }
 ]
 
 const getRandomFact = (facts) => facts[Math.floor(Math.random() * facts.length)]
@@ -61,25 +64,50 @@ const Facts = () => {
         alignItems: 'center'
       }}
     >
-      <h2>Smoking Facts</h2>
-      <h3>Did you know?</h3>
+      <Typography variant="h4" gutterBottom>
+        Did you know?
+      </Typography>
 
-      <h4>{currentFact.fact}</h4>
-
-      <Button
-        variant="contained"
-        onClick={showNextFact}
+      <Card
+        sx={{
+          variant: 'outlined',
+          maxWidth: 400,
+          minHeight: 350,
+          display: 'flex',
+          textAlign: 'center',
+          flexDirection: 'column',
+          justifyContent: 'space-between',
+          backgroundColor: '#f5f5f5',
+          p: 2
+        }}
       >
-        Give me another fact
-      </Button>
+        <CardContent>
+          <SmokeFreeIcon
+            sx={{ fontSize: 50, mb: 2 }}
+            color="action"
+          />
 
-      <br />
+          <Typography variant="h6">
+            {currentFact.fact}
+          </Typography>
+        </CardContent>
+
+        <CardActions sx={{ justifyContent: 'center', mt: 'auto' }}>
+          <Button
+            variant="outlined"
+            onClick={showNextFact}
+          >
+            Give me another fact
+          </Button>
+        </CardActions>
+      </Card>
 
       <Button
-        variant="outlined"
+        sx={{ mt: 3 }}
+        variant="contained"
         onClick={() => navigate('/feedback')}
       >
-        continue
+        Finish
       </Button>
     </Stack>
   )

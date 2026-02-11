@@ -164,7 +164,7 @@ const BoxBreathing = () => {
         variant="outlined"
         onClick={() => navigate('/feedback')}
       >
-        Continue
+        Finish
       </Button>
     </Stack>
   )
