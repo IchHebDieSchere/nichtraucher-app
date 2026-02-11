@@ -33,27 +33,26 @@ const PlacementScreen = () => {
           Back
         </Button>
         <Typography>
-          Platziere nun bitte das Widget auf deinem Startbildschirm
+          You can now place the widget on your home screen.
         </Typography>
         <Typography>
-          Dies gibt dir einfachen und schnellen Zugriff sobald du dein Handy
-          entsperrst
+          This gives you quick and easy access as soon as you unlock your phone.
         </Typography>
       </Stack>
       <Box component="img" src="empty" alt="*insert GIF here*" />
 
       <Box sx={{ p: 2 }}>
-        <Typography>Schritt 1: Startbildschirm gedrückt halten</Typography>
-        <Typography>Schritt 2: "Widgets" auswählen</Typography>
-        <Typography>Schritt 3: Widget finden und platzieren</Typography>
+        <Typography>Step 1: Press and hold the home screen</Typography>
+        <Typography>Step 2: Select “Widgets”</Typography>
+        <Typography>Step 3: Find and place the widget</Typography>
       </Box>
 
       <Stack alignSelf="flex-end" spacing={2}>
         <Button onClick={handleDone} variant="contained" fullWidth>
-          Ich hab's gemacht
+          Done
         </Button>
         <Button fullWidth onClick={handleLater} variant="text">
-          Später erinnern
+          Remind later
         </Button>
       </Stack>
     </Stack>
