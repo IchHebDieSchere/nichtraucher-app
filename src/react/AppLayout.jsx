@@ -1,35 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+import SmokeFreeIcon from '@mui/icons-material/SmokeFree'
 
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import {
   Stack,
   Typography,
   Container,
   Paper,
-  BottomNavigation,
-  BottomNavigationAction
+  Box,
+  Slide,
+  Alert
 } from '@mui/material'
 
-import {
-  HealthAndSafety as HomeIcon,
-  Pets as CatIcon,
-  Person4 as ProfileIcon
-} from '@mui/icons-material'
-
 import AppRoutes from './AppRoutes'
-
-import AppLogo from '../assets/favicon.svg'
 
 const borderRadius = 6
 
 const AppLayout = () => {
   const location = useLocation()
-  const navigate = useNavigate()
+  const [isSlide, setSlide] = useState(false)
+  const [message, setMessage] = useState('')
+  const prevPathRef = useRef('')
 
-  let navigationIndex = 0
-  if (location.pathname.startsWith('/catnames')) navigationIndex = 1
-  if (location.pathname.startsWith('/profile')) navigationIndex = 2
+  useEffect(() => {
+    const currentPath = location.pathname
+    const prevPath = prevPathRef.current
+
+    if (prevPath === '/feedback' && currentPath === '/menu') {
+      setMessage('Good job! You resisted the urge to smoke!')
+      setSlide(true)
+      setTimeout(() => {
+        setSlide(false)
+      }, 3000)
+    }
+
+    prevPathRef.current = currentPath
+  }, [location])
 
   return (
     <Stack
@@ -57,16 +64,12 @@ const AppLayout = () => {
           alignItems="center"
           marginBottom={2}
         >
-          <img
-            src={AppLogo}
-            alt="App Logo"
-            style={{
-              width: '40px',
-              height: '40px'
-            }}
+          <SmokeFreeIcon
+            sx={{ fontSize: 40 }}
+            color="action"
           />
           <Typography variant="h5">
-            My Mobile Health App
+            RauchStopp
           </Typography>
         </Stack>
         <Paper
@@ -81,42 +84,44 @@ const AppLayout = () => {
             paddingLeft: 1,
             overflow: 'hidden',
             borderRadius: theme => theme.spacing(borderRadius),
-            background: theme => theme.palette.grey[900]
+            background: theme => theme.palette.grey[900],
+            position: 'relative'
           }}
         >
           <Stack
             flex="1 1 auto"
             direction="column"
-            justifyContent="center"
+            justifyContent={
+              location.pathname.startsWith('/homescreen')
+                ? 'space-between'
+                : 'center'
+            }
             alignItems="center"
             sx={{
               overflow: 'hidden',
               borderRadius: theme => theme.spacing(borderRadius),
-              background: theme => theme.palette.background.paper
+              background: 'linear-gradient(to top, #E3F2FD 0%, #FFFFFF 35%)',
+              position: 'relative'
             }}
           >
-            <AppRoutes />
-            <BottomNavigation
-              showLabels
-              value={navigationIndex}
-              sx={{ width: '100%' }}
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 20,
+                left: '50%',
+                zIndex: 1000,
+                transform: 'translate(-50%)',
+                width: '60%',
+                pointerEvents: 'none'
+              }}
             >
-              <BottomNavigationAction
-                label="Home"
-                icon={<HomeIcon />}
-                onClick={() => navigate('/')}
-              />
-              <BottomNavigationAction
-                label="Cat Names"
-                icon={<CatIcon />}
-                onClick={() => navigate('/catnames')}
-              />
-              <BottomNavigationAction
-                label="Profile"
-                icon={<ProfileIcon />}
-                onClick={() => navigate('/profile')}
-              />
-            </BottomNavigation>
+              <Slide direction="down" in={isSlide}>
+                <Alert severity="success" variant="filled" sx={{ borderRadius: 2 }}>
+                  {message}
+                </Alert>
+              </Slide>
+            </Box>
+            <AppRoutes />
           </Stack>
         </Paper>
       </Container>
