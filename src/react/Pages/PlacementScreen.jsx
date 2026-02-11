@@ -7,7 +7,7 @@ const PlacementScreen = () => {
   const navigate = useNavigate()
 
   const handleBack = () => {
-    navigate('/menu')
+    navigate('-1')
   }
   const handleDone = () => {
     navigate('/menu')
