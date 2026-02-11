@@ -127,7 +127,6 @@ const AppLayout = () => {
               </Slide>
             </Box>
             <AppRoutes />
-
           </Stack>
         </Paper>
       </Container>
