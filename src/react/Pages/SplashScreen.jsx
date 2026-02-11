@@ -5,13 +5,13 @@ import SmokeFreeIcon from '@mui/icons-material/SmokeFree'
 
 const SplashScreen = () => {
   const navigate = useNavigate()
-  const [fade, setFade] = useState(true)
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
-    setFade(false)
-  }, [])
+    const fadeTimer = setTimeout(() => {
+      setVisible(false)
+    }, 2800)
 
-  useEffect(() => {
     const autoRedirectTimerId = setTimeout(() => {
       const method = localStorage.getItem('selectedMethod')
 
@@ -26,23 +26,26 @@ const SplashScreen = () => {
       } else {
         navigate('/error')
       }
-    }, 5000)
+    }, 3500)
 
     return () => {
+      clearTimeout(fadeTimer)
       clearTimeout(autoRedirectTimerId)
     }
   }, [])
 
   return (
-    <Fade appear={false} in={fade} timeout={5200}>
-      <Stack
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Typography marginBottom={1} variant="h4">RauchStopp</Typography>
-        <SmokeFreeIcon sx={{ fontSize: 55 }} />
-      </Stack>
-    </Fade>
+    <Stack
+      justifyContent="center"
+      alignItems="center"
+      sx={{
+        opacity: visible ? 1 : 0,
+        transition: 'opacity 0.7s ease-in-out'
+      }}
+    >
+      <Typography marginBottom={1} variant="h4">RauchStopp</Typography>
+      <SmokeFreeIcon sx={{ fontSize: 55 }} />
+    </Stack>
   )
 }
 
