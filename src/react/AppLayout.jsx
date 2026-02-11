@@ -29,7 +29,11 @@ const AppLayout = () => {
     const prevPath = prevPathRef.current
 
     if (prevPath === '/feedback' && currentPath === '/menu') {
+<<<<<<< HEAD
       setMessage('Good Job! Du hast dem Rauchdrang widerstanden!')
+=======
+      setMessage('Good job! You resisted the urge to smoke!')
+>>>>>>> 69733cb (Translate to english)
       setSlide(true)
       setTimeout(() => {
         setSlide(false)
