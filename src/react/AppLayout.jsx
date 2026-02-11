@@ -127,7 +127,7 @@ const AppLayout = () => {
               </Slide>
             </Box>
             <AppRoutes />
-            {location.pathname.startsWith('/homescreen') }
+
           </Stack>
         </Paper>
       </Container>
