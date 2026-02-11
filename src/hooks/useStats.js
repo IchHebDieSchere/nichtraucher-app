@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 
 const defaultStats = {
   cravings: 0,
-  smokeFreeDays: 0,
   missions: 0
 }
 

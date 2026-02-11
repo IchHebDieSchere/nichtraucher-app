@@ -18,7 +18,6 @@ const Statistics = ({ stats }) => {
         }}
       >
         <div>Cravings suppressed: {stats.cravings}</div>
-        <div>Smoke free days: {stats.smokeFreeDays}</div>
         <div>Missions completed: {stats.missions}</div>
       </Box>
 

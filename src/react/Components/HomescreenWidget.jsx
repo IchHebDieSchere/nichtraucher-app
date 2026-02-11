@@ -15,7 +15,7 @@ const buttonPress = keyframes`
   100% { transform: translateY(0px) rotateX(45deg); }
 `
 
-const HomescreenWidget = () => {
+const HomeScreenWidget = () => {
   const [isPressed, setIsPressed] = useState(false)
   const [isGlow, setIsGlow] = useState(false)
   const navigate = useNavigate()
@@ -53,7 +53,7 @@ const HomescreenWidget = () => {
               setIsPressed(false)
             }, 1000)
             setTimeout(() => {
-              navigate('/splashscreen')
+              navigate('/')
             }, 1000)
           }}
           sx={{
@@ -92,4 +92,4 @@ const HomescreenWidget = () => {
   )
 }
 
-export default HomescreenWidget
+export default HomeScreenWidget
