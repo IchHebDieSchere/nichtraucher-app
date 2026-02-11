@@ -2,7 +2,7 @@ import React from 'react'
 import { Stack, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import useStats from '../../../hooks/useStats'
-import tetrisImg from './tetris.png'
+import tetrisImg from './TetrisImage.png'
 
 const Minigame = () => {
   const navigate = useNavigate()
@@ -17,7 +17,7 @@ const Minigame = () => {
       }}
     >
       <h2>Mini game</h2>
-      {/* Image source: https://simple.wikipedia.org/wiki/Tetris */}
+      {/* Image source: ChatGPT hat das Bild erstellt */}
       <img
         src={tetrisImg}
         alt="minigame"

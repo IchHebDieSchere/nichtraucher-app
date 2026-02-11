@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
+import SmokeFreeIcon from '@mui/icons-material/SmokeFree'
 
 import { useLocation } from 'react-router-dom'
 
@@ -13,8 +14,6 @@ import {
 } from '@mui/material'
 
 import AppRoutes from './AppRoutes'
-
-import AppLogo from '../assets/favicon.svg'
 
 const borderRadius = 6
 
@@ -65,16 +64,12 @@ const AppLayout = () => {
           alignItems="center"
           marginBottom={2}
         >
-          <img
-            src={AppLogo}
-            alt="App Logo"
-            style={{
-              width: '40px',
-              height: '40px'
-            }}
+          <SmokeFreeIcon
+            sx={{ fontSize: 40 }}
+            color="action"
           />
           <Typography variant="h5">
-            My Mobile Health App
+            RauchStopp
           </Typography>
         </Stack>
         <Paper
