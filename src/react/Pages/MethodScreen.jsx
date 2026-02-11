@@ -52,39 +52,40 @@ const MethodScreen = () => {
   }
 
   return (
-    <Stack flexGrow={1} justifyContent="space-between" p={2}>
-      <Stack alignItems="flex-start" marginTop={2} marginLeft={2}>
-        <Button variant="contained" onClick={() => navigate(-1)}>
-          Zurück
-        </Button>
-      </Stack>
-
+    <Stack justifyContent="space-between" p={2}>
       <FormControl>
-        <FormLabel sx={{ mb: 5 }}>
-          Mit welcher Methode können wir dich am besten unterstützen?
+        <FormLabel sx={{ mb: 2, textAlign: 'center' }}>
+          How would you like us to support you?
         </FormLabel>
-        <RadioGroup value={selectedMethod} onChange={handleRadioChange}>
+        <RadioGroup
+          sx={{ margin: '0 16px ' }}
+          value={selectedMethod}
+          onChange={handleRadioChange}
+        >
           <FormControlLabel
             value="game"
             control={<Radio />}
-            label="Methode: Spiel, z.B. Tetris"
+            label="Play a game (e.g., Tetris)"
           />
           <FormControlLabel
             value="facts"
             control={<Radio />}
-            label="Methode: Fakten über Craving und Vorteile des Durchhaltens"
+            label="Learn about cravings and the benefits of staying smoke-free"
           />
           <FormControlLabel
             value="breathing"
             control={<Radio />}
-            label="Methode: Atem-/Dehnübung"
+            label="Try a breathing or stretching exercise"
           />
         </RadioGroup>
       </FormControl>
 
-      <Stack alignItems="center">
+      <Stack direction="row" justifyContent="flex-end" spacing={2} marginTop={3}>
+        <Button variant="outlined" onClick={() => navigate(-1)}>
+          Back
+        </Button>
         <Button disabled={!selectedMethod} variant="contained" onClick={onClickHandle}>
-          Weiter
+          Continue
         </Button>
       </Stack>
     </Stack>
