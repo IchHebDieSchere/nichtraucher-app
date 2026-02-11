@@ -21,7 +21,7 @@ const MainMenu = () => {
       </ToggleButtonGroup>
 
       {tab === 'statistik' && (
-        <Statistics stats={stats} setStats={setStats} incrementMission={incrementMission} />
+        <Statistics stats={stats} setStats={setStats} incrementMission={incrementMission} selectedMethod={selectedMethod} setSelectedMethod={setSelectedMethod} />
       )}
       {tab === 'methoden' && (
         <Methods selectedMethod={selectedMethod} setSelectedMethod={setSelectedMethod} />

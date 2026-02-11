@@ -4,10 +4,12 @@ import { Stack, Typography, IconButton, Button, Box } from '@mui/material'
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied'
 import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral'
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied'
+import useStats from '../../hooks/useStats'
 
 const FeedbackScreen = () => {
   const navigate = useNavigate()
   const [mood, setMood] = useState('')
+  const { incrementCraving } = useStats()
 
   const handleNextClick = () => {
     if (mood === 'bad') {
@@ -16,6 +18,7 @@ const FeedbackScreen = () => {
       navigate('/suggestion')
     } else if (mood === 'good') {
       navigate('/menu')
+      incrementCraving()
     }
   }
 
@@ -82,7 +85,11 @@ const FeedbackScreen = () => {
             height: '106px'
           }}
         >
-          <IconButton onClick={() => navigate('/menu')}>
+          <IconButton onClick={() => {
+            incrementCraving()
+            navigate('/menu')
+          }}
+          >
             <SentimentVerySatisfiedIcon sx={{ fontSize: goodSize, color: 'green' }} />
           </IconButton>
         </Box>

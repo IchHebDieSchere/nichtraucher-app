@@ -1,22 +1,25 @@
 import React from 'react'
 
-import { Stack, Box, Button, FormControlLabel, RadioGroup, Radio } from '@mui/material'
+import { Stack, Box, Button, ToggleButtonGroup, ToggleButton } from '@mui/material'
 import { useNavigate } from 'react-router'
 
-//typography caption
-//flackern geht auch weg
-//button behalten
-//toggle anstelle von radio button
+const emergencyRoutes = {
+  game: '/minigame',
+  breathing: '/boxBreathing',
+  facts: '/facts'
+}
 
 const Methods = ({ selectedMethod, setSelectedMethod }) => {
   const routeTo = useNavigate()
 
-  const handleRadioChange = (event) => {
-    setSelectedMethod(event.target.value)
+  const handleToggleChange = (event, newMethod) => {
+    if (newMethod !== null) {
+      setSelectedMethod(newMethod)
+    }
   }
 
   return (
-    <Stack alignItems="center" justifyContent="center" spacing={1}>
+    <Stack alignItems="center" justifyContent="center" spacing={2}>
       <Box
         sx={{
           width: 360,
@@ -26,15 +29,42 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
           p: 1
         }}
       >
-        <RadioGroup
-          name="method"
+        <ToggleButtonGroup
           value={selectedMethod}
-          onChange={handleRadioChange}
+          exclusive
+          onChange={handleToggleChange}
+          orientation="vertical"
+          fullWidth
+          sx={{
+            gap: 1,
+            '& .MuiToggleButton-root': {
+              bgcolor: 'grey.200',
+              color: 'text.primary',
+              border: '1px solid',
+              borderColor: 'divider',
+              borderRadius: 1
+            },
+            '& .MuiToggleButton-root.Mui-selected': {
+              bgcolor: '#1769aa',
+              color: 'primary.contrastText'
+            },
+            '& .MuiToggleButton-root.Mui-selected:hover': {
+              bgcolor: 'primary.dark'
+            }
+          }}
         >
-          <FormControlLabel value="game" control={<Radio />} label="Tetris" />
-          <FormControlLabel value="breathing" control={<Radio />} label="Breathing Exercise" />
-          <FormControlLabel value="facts" control={<Radio />} label="Facts and Advantages" />
-        </RadioGroup>
+          <ToggleButton value="game">
+            Tetris
+          </ToggleButton>
+
+          <ToggleButton value="facts">
+            Facts and Advantages
+          </ToggleButton>
+
+          <ToggleButton value="breathing">
+            Breathing Exercise
+          </ToggleButton>
+        </ToggleButtonGroup>
       </Box>
 
       <Button
@@ -47,7 +77,11 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/boxBreathing')}
+        onClick={() => {
+          if (selectedMethod) {
+            routeTo(emergencyRoutes[selectedMethod])
+          }
+        }}
         sx={{ bgcolor: '#fc0303', color: '#fff', zIndex: 99 }}
       >
         Emergency

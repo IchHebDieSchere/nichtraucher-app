@@ -3,14 +3,17 @@ import React from 'react'
 import { Stack, Box, Button } from '@mui/material'
 import { useNavigate } from 'react-router'
 
-const Statistics = ({ stats }) => {
+const emergencyRoutes = {
+  game: '/minigame',
+  breathing: '/boxBreathing',
+  facts: '/facts'
+}
+
+const Statistics = ({ stats, selectedMethod, setSelectedMethod }) => {
   const routeTo = useNavigate()
 
-  // Welche Methode wurde wie häufig benutzt?
-  // Bewertungen
-
   return (
-    <Stack alignItems="center" justifyContent="center" spacing={1}>
+    <Stack alignItems="center" justifyContent="center" spacing={2}>
       <Box
         sx={{
           width: 360,
@@ -21,7 +24,6 @@ const Statistics = ({ stats }) => {
         }}
       >
         <div>Cravings suppressed: {stats.cravings}</div>
-        <div>Smoke free days: {stats.smokeFreeDays}</div>
         <div>Missions completed: {stats.missions}</div>
       </Box>
 
@@ -35,7 +37,11 @@ const Statistics = ({ stats }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/boxBreathing')}
+        onClick={() => {
+          if (selectedMethod) {
+            routeTo(emergencyRoutes[selectedMethod])
+          }
+        }}
         sx={{ bgcolor: '#fc0303', color: '#fff', zIndex: 99 }}
       >
         Emergency
