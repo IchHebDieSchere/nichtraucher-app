@@ -3,7 +3,13 @@ import React from 'react'
 import { Stack, Box, Button } from '@mui/material'
 import { useNavigate } from 'react-router'
 
-const Statistics = ({ stats }) => {
+const emergencyRoutes = {
+  game: '/minigame',
+  breathing: '/boxBreathing',
+  facts: '/facts'
+}
+
+const Statistics = ({ stats, selectedMethod, setSelectedMethod }) => {
   const routeTo = useNavigate()
 
   return (
@@ -31,7 +37,11 @@ const Statistics = ({ stats }) => {
 
       <Button
         variant="contained"
-        onClick={() => routeTo('/boxBreathing')}
+        onClick={() => {
+          if (selectedMethod) {
+            routeTo(emergencyRoutes[selectedMethod])
+          }
+        }}
         sx={{ bgcolor: '#fc0303', color: '#fff', zIndex: 99 }}
       >
         Emergency
