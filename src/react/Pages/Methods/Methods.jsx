@@ -57,12 +57,12 @@ const Methods = ({ selectedMethod, setSelectedMethod }) => {
             Tetris
           </ToggleButton>
 
-          <ToggleButton value="breathing">
-            Breathing Exercise
-          </ToggleButton>
-
           <ToggleButton value="facts">
             Facts and Advantages
+          </ToggleButton>
+
+          <ToggleButton value="breathing">
+            Breathing Exercise
           </ToggleButton>
         </ToggleButtonGroup>
       </Box>
