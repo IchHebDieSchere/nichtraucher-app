@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import { useLocation } from 'react-router-dom'
 
@@ -6,7 +6,10 @@ import {
   Stack,
   Typography,
   Container,
-  Paper
+  Paper,
+  Box,
+  Slide,
+  Alert
 } from '@mui/material'
 
 import AppRoutes from './AppRoutes'
@@ -17,6 +20,25 @@ const borderRadius = 6
 
 const AppLayout = () => {
   const location = useLocation()
+  const [isSlide, setSlide] = useState(false)
+  const [message, setMessage] = useState('')
+  const prevPathRef = useRef('')
+
+  useEffect(() => {
+    const currentPath = location.pathname
+    const prevPath = prevPathRef.current
+
+    if (prevPath === '/feedback' && currentPath === '/menu') {
+      setMessage('Good job! You resisted the urge to smoke!')
+      setSlide(true)
+      setTimeout(() => {
+        setSlide(false)
+      }, 3000)
+    }
+
+    prevPathRef.current = currentPath
+  }, [location])
+
   return (
     <Stack
       direction="row"
@@ -67,7 +89,8 @@ const AppLayout = () => {
             paddingLeft: 1,
             overflow: 'hidden',
             borderRadius: theme => theme.spacing(borderRadius),
-            background: theme => theme.palette.grey[900]
+            background: theme => theme.palette.grey[900],
+            position: 'relative'
           }}
         >
           <Stack
@@ -82,11 +105,28 @@ const AppLayout = () => {
             sx={{
               overflow: 'hidden',
               borderRadius: theme => theme.spacing(borderRadius),
-              background: 'linear-gradient(to top, #E3F2FD 0%, #FFFFFF 35%)'
+              background: 'linear-gradient(to top, #E3F2FD 0%, #FFFFFF 35%)',
+              position: 'relative'
             }}
           >
+            <Box
+              sx={{
+                position: 'absolute',
+                top: 20,
+                left: '50%',
+                zIndex: 1000,
+                transform: 'translate(-50%)',
+                width: '60%',
+                pointerEvents: 'none'
+              }}
+            >
+              <Slide direction="down" in={isSlide}>
+                <Alert severity="success" variant="filled" sx={{ borderRadius: 2 }}>
+                  {message}
+                </Alert>
+              </Slide>
+            </Box>
             <AppRoutes />
-            {location.pathname.startsWith('/homescreen') }
           </Stack>
         </Paper>
       </Container>

@@ -44,10 +44,8 @@ const HomeScreenWidget = () => {
         />
         <Avatar
           onMouseUp={() => {
-            console.log('Button clicked!')
             setTimeout(() => {
               setIsPressed(true)
-              console.log('isPressed set to true')
             }, 100)
             setTimeout(() => {
               setIsPressed(false)
