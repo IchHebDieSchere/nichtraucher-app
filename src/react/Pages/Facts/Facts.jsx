@@ -6,6 +6,7 @@ import SmokeFreeIcon from '@mui/icons-material/SmokeFree'
 /**
  * Used for filtering out used Elements in an Array: https://react.dev/learn/updating-arrays-in-state
  * Used for getRandomFacts: https://stackoverflow.com/questions/62709706/how-do-i-get-a-random-element-from-an-array-when-a-button-is-clicked
+ * Facts from https://einsteinmed.edu/uploadedFiles/bronxbreathes/10%20Things.pdf & https://www.who.int/news-room/fact-sheets/detail/tobacco
  */
 
 const allFacts = [
