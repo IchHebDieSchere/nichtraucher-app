@@ -82,7 +82,7 @@ const AppLayout = () => {
             sx={{
               overflow: 'hidden',
               borderRadius: theme => theme.spacing(borderRadius),
-              background: theme => theme.palette.background.paper
+              background: 'linear-gradient(to top, #E3F2FD 0%, #FFFFFF 35%)'
             }}
           >
             <AppRoutes />
