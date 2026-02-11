@@ -23,10 +23,11 @@ const Minigame = () => {
       />
       <br />
       <Button
-        variant="outlined"
+        sx={{ mb: 8 }}
+        variant="contained"
         onClick={() => navigate('/feedback')}
       >
-        Continue
+        Finish
       </Button>
     </Stack>
   )
