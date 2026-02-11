@@ -33,7 +33,18 @@ const PlacementScreen = () => {
           This gives you quick and easy access as soon as you unlock your phone.
         </Typography>
       </Stack>
-      <Box component="img" src={tutorialImg} alt="*insert GIF here*" />
+      <Box
+        component="img"
+        src={tutorialImg}
+        alt="*insert GIF here*"
+        sx={{
+          maxWidth: '300px',
+          maxHeight: '300px',
+          width: '100%',
+          height: 'auto',
+          objectFit: 'contain'
+        }}
+      />
 
       <Box sx={{ p: 2 }}>
         <Typography>Step 1: Press and hold the home screen</Typography>
