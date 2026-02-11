@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Stack, Typography, Fade } from '@mui/material'
+import { Stack, Typography } from '@mui/material'
 import SmokeFreeIcon from '@mui/icons-material/SmokeFree'
 
 const SplashScreen = () => {
@@ -10,7 +10,7 @@ const SplashScreen = () => {
   useEffect(() => {
     const fadeTimer = setTimeout(() => {
       setVisible(false)
-    }, 2800)
+    }, 1800)
 
     const autoRedirectTimerId = setTimeout(() => {
       const method = localStorage.getItem('selectedMethod')
@@ -26,7 +26,7 @@ const SplashScreen = () => {
       } else {
         navigate('/error')
       }
-    }, 3500)
+    }, 2500)
 
     return () => {
       clearTimeout(fadeTimer)
