@@ -18,16 +18,24 @@ export default function useStats() {
     }
   }, []) // deps leer = useEffect wird nur einmal aufgerufen (bei [tab] bei jedem tab wechsel)
 
+  useEffect(() => {
+    localStorage.setItem('stats', JSON.stringify(stats))
+  }, [stats])
+
   const incrementMission = () => {
-    setStats(prevState => ({
-      ...prevState, missions: prevState.missions + 1 /// ... nimmt alle werte aus stats -> cravings, missions
-    }))
+    setStats(prev => {
+      const next = { ...prev, missions: prev.missions + 1 }
+      localStorage.setItem('stats', JSON.stringify(next))
+      return next
+    })
   }
 
   const incrementCraving = () => {
-    setStats(prevState => ({
-      ...prevState, cravings: prevState.cravings + 1
-    }))
+    setStats(prev => {
+      const next = { ...prev, cravings: prev.cravings + 1 }
+      localStorage.setItem('stats', JSON.stringify(next))
+      return next
+    })
   }
 
   return { stats, setStats, incrementMission, incrementCraving }

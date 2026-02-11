@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Stack, Box, Button } from '@mui/material'
 import { ArrowBack, ArrowDownward, ArrowForward, ArrowUpward } from '@mui/icons-material'
 import { useNavigate } from 'react-router-dom'
+import useStats from '../../../hooks/useStats'
 
 const ArrowStep = [0, 1, 2, 3]
 const PHASES = [
@@ -24,6 +25,7 @@ const BoxBreathing = () => {
   const navigate = useNavigate()
   const [step, setStep] = useState(0)
   const [phaseIndex, setPhaseIndex] = useState(0)
+  const { incrementMission } = useStats()
 
   // Set up interval to update step every second & Phase every 4 seconds
   useEffect(() => {
@@ -163,7 +165,10 @@ const BoxBreathing = () => {
       <Button
         sx={{ mb: 8 }}
         variant="contained"
-        onClick={() => navigate('/feedback')}
+        onClick={() => {
+          incrementMission()
+          navigate('/feedback')
+        }}
       >
         Finish
       </Button>

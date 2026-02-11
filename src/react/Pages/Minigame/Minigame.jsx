@@ -1,10 +1,12 @@
 import React from 'react'
 import { Stack, Button } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
+import useStats from '../../../hooks/useStats'
 import tetrisImg from './tetris.png'
 
 const Minigame = () => {
   const navigate = useNavigate()
+  const { incrementMission } = useStats()
 
   return (
     <Stack
@@ -25,7 +27,10 @@ const Minigame = () => {
       <Button
         sx={{ mb: 8 }}
         variant="contained"
-        onClick={() => navigate('/feedback')}
+        onClick={() => {
+          incrementMission()
+          navigate('/feedback')
+        }}
       >
         Finish
       </Button>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Stack, Button, Card, CardContent, CardActions, Typography } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import SmokeFreeIcon from '@mui/icons-material/SmokeFree'
+import useStats from '../../../hooks/useStats'
 
 /**
  * Used for filtering out used Elements in an Array: https://react.dev/learn/updating-arrays-in-state
@@ -23,6 +24,7 @@ const getRandomFact = (facts) => facts[Math.floor(Math.random() * facts.length)]
 
 const Facts = () => {
   const navigate = useNavigate()
+  const { incrementMission } = useStats()
 
   // Random fact is being generated upon first loading the page from allFacts
   const [currentFact, setCurrentFact] = useState(() => getRandomFact(allFacts))
@@ -106,7 +108,10 @@ const Facts = () => {
       <Button
         sx={{ mt: 3 }}
         variant="contained"
-        onClick={() => navigate('/feedback')}
+        onClick={() => {
+          incrementMission()
+          navigate('/feedback')
+        }}
       >
         Finish
       </Button>
