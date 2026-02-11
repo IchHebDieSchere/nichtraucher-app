@@ -18,7 +18,7 @@
     "start:dev": "cd build && ws --spa index.html",
     "build": "yarn clean && yarn webpack",
     "watch": "yarn clean && yarn webpack:dev  --watch",
-    "clean": "rimraf -rf build && mkdirp build",
+    "clean": "rm -rf build && mkdirp build",
     "webpack": "cross-env NODE_ENV=production webpack --config webpack.config.js --mode production --progress",
     "webpack:dev": "cross-env NODE_ENV=development webpack --config webpack.config.js --mode development --devtool eval-source-map --progress",
     "deploy": "yarn build && firebase deploy",
