@@ -116,7 +116,7 @@ const AppLayout = () => {
               }}
             >
               <Slide direction="down" in={isSlide}>
-                <Alert severity="success" variant="filled" sx={{ borderRadius: 2 }}>
+                <Alert severity="info" variant="filled" sx={{ borderRadius: 2 }}>
                   {message}
                 </Alert>
               </Slide>
